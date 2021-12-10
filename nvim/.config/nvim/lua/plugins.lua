@@ -2,7 +2,7 @@ return require('packer').startup({
 	function(use)
 		use 'wbthomason/packer.nvim'
 
-		use 'gruvbox-community/gruvbox'
+        use 'dracula/vim'
 
 		use 'nvim-lua/plenary.nvim'
 		use 'nvim-telescope/telescope.nvim'
