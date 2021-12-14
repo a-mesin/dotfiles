@@ -18,6 +18,10 @@ map('i', '<C-k>', '<esc>:m .-2<CR>==', options)
 map('v', 'J', ':m \'>+1<CR>gv=gv', options)
 map('v', 'K', ':m \'<-2<CR>gv=gv', options)
 
+map('n', '<C-j>', '<C-W><C-j>', options)
+map('n', '<C-k>', '<C-W><C-k>', options)
+map('n', '<C-h>', '<C-W><C-h>', options)
+map('n', '<C-l>', '<C-W><C-l>', options)
 
 map('i', 'jk', '<esc>', options) -- Exit insert mode with jk 
 
