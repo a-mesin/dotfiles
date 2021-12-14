@@ -34,8 +34,8 @@ map('n', '<right>', ':echo "No right for you"<CR>', options)
 
 -- Telescope
 map('n', '<leader>ff', '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', options)
-map('n', '<leader>fg', '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', options)
-map('n', '<leader>fb', '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', options)
-map('n', '<leader>fh', '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', options)
-map('n', '<leader>fgf', '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', options)
-map('n', '<leader>fgb', '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', options)
+map('n', '<leader>fg', '<cmd> lua require(\'telescope.builtin\').live_grep()<CR>', options)
+map('n', '<leader>fb', '<cmd> lua require(\'telescope.builtin\').buffers()<CR>', options)
+map('n', '<leader>fh', '<cmd> lua require(\'telescope.builtin\').help_tags()<CR>', options)
+map('n', '<leader>fgf', '<cmd> lua require(\'telescope.builtin\').git_files()<CR>', options)
+map('n', '<leader>fgc', '<cmd> lua require(\'telescope.builtin\').git_commits()<CR>', options)
