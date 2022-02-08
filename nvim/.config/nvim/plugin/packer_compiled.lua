@@ -69,6 +69,19 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["coq.artifacts"] = {
+    loaded = true,
+    path = "/Users/ayhan/.local/share/nvim/site/pack/packer/start/coq.artifacts",
+    url = "https://github.com/ms-jpq/coq.artifacts"
+  },
+  coq_nvim = {
+    config = { "vim.cmd[[COQnow]]" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/ayhan/.local/share/nvim/site/pack/packer/opt/coq_nvim",
+    url = "https://github.com/ms-jpq/coq_nvim"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/ayhan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -127,6 +140,13 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'coq_nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)
