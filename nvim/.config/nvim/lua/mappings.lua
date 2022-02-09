@@ -29,13 +29,6 @@ map('n', 'Y', 'y$', options) -- Fix yanking
 map('n', 'n', 'nzz', options) -- centre when searching
 map('n', 'N', 'Nzz', options)
 
--- Unbindings
-map('i', '<esc>', '<nop>', options)
-map('n', '<up>', ':echo "No up for you"<CR>', options)
-map('n', '<down>', ':echo "No down for you"<CR>', options)
-map('n', '<left>', ':echo "No left for you"<CR>', options)
-map('n', '<right>', ':echo "No right for you"<CR>', options)
-
 -- Telescope
 map('n', '<leader>ff', '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', options)
 map('n', '<leader>fg', '<cmd> lua require(\'telescope.builtin\').live_grep()<CR>', options)
