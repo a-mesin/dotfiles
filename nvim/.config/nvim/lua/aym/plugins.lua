@@ -10,8 +10,6 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'
     use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
 
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
@@ -30,7 +28,13 @@ return require('packer').startup(function()
 
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        run = ':TSUpdate',
+        requires = {
+            {
+                "p00f/nvim-ts-rainbow",
+                after = "nvim-treesitter",
+            }
+        }
     }
 
 end)
