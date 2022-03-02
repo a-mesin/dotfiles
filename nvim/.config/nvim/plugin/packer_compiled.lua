@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/ayhan/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/ayhan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/ayhan/.local/share/nvim/site/pack/packer/start/nvim-cmp",

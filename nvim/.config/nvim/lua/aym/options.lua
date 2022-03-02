@@ -15,7 +15,6 @@ opt.smartcase = true -- considers casing when searching
 -- opt.undofile = true -- keeps undo history even when file is closed
 opt.hlsearch = false -- disables highlighting of previous search
 opt.backup = false -- disables backup
-opt.statusline = '%F\\' -- statusline config
 opt.termguicolors = true
 opt.smartindent = true -- auto indents when pressing enter in needed places
 opt.swapfile = false -- disables swap file

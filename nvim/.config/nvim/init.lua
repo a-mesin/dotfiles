@@ -5,4 +5,5 @@ require('aym.mappings')
 require('aym.theme')
 require('aym.go')
 require('aym.treesitter')
+require('aym.lualine')
 
