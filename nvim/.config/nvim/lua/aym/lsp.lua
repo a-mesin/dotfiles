@@ -1,15 +1,11 @@
 local lsp = require('lspconfig')
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
-  local map = vim.api.nvim_buf_set_keymap
-
-  -- Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
@@ -35,14 +31,71 @@ local on_attach = function(client, bufnr)
 
 end
 
+local updated_capabilities = vim.lsp.protocol.make_client_capabilities()
+updated_capabilities = require('cmp_nvim_lsp').update_capabilities(updated_capabilities)
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'volar', 'gopls', 'tsserver' }
 for _, server in pairs(servers) do
     lsp[server].setup {
         on_attach = on_attach,
+    	capabilities = updated_capabilities,
         flags = {
             debounce_text_changes = 150,
         },
     }
 end
+
+
+vim.opt.completeopt='menuone,noselect'
+
+cmp.setup {
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
+    },
+    mapping = {
+        ["<c-space>"] = cmp.mapping {
+            i = cmp.mapping.complete(),
+            c = function(
+                _ --[[fallback]]
+                )
+                if cmp.visible() then
+                    if not cmp.confirm { select = true } then
+                        return
+                    end
+                else
+                    cmp.complete()
+                end
+            end,
+        },
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `elect` to `false` to only confirm explicitly selected items.
+        -- use Tab and shift-Tab to navigate autocomplete menu
+        ['<Tab>'] = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end,
+        ['<S-Tab>'] = function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end,
+    },
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'path' },
+        { name = 'luasnip' },
+        { name = 'buffer' }
+    })
+}

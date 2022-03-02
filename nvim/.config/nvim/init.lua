@@ -1,10 +1,8 @@
-local init = function()
-        require('options')
-        require('mappings')
-        require('plugins')
-        require('theme')
-        require('lsp')
-        require('go')
-end
+require('aym.plugins')
+require('aym.lsp')
+require('aym.options')
+require('aym.mappings')
+require('aym.theme')
+require('aym.go')
+require('aym.treesitter')
 
-init()

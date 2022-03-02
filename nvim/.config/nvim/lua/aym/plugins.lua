@@ -20,6 +20,17 @@ return require('packer').startup(function()
         config = function() require'nvim-tree'.setup {} end
     }
 
-    use { 'ms-jpq/coq_nvim', branch = 'coq' }
-    use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-buffer' }
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/cmp-path' }
+
+    use { 'L3MON4D3/LuaSnip' }
+    use { 'saadparwaiz1/cmp_luasnip' }
+
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+
 end)
