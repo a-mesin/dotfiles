@@ -119,7 +119,7 @@ export PATH=$PATH:/Library/protoc-3/include
 
 alias vim='nvim'
 alias v='nvim'
-alias ev='nvim ~/.config/nvim/init.vim'
+alias cat='bat'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
