@@ -29,3 +29,6 @@ alias cat=bat
 
 # Configure asdf
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+# Init prezto
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"

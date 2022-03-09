@@ -15,6 +15,7 @@ packages=(
     stow
     tmux
     ripgrep
+    zsh
 )
 
 for package in ${packages[@]}
@@ -36,14 +37,7 @@ do
 done
 
 echo '🚀 Install zprezto'
-# TODO: check if linking these is enough to install zprezto
-
-ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/zsh/.zlogin ~/.zlogin
-ln -s ~/.dotfiles/zsh/.zlogout ~/.zlogout
-ln -s ~/.dotfiles/zsh/.zprofile ~/.zprofile
-ln -s ~/.dotfiles/zsh/.zshenv ~/.zshenv
-ln -s ~/.dotfiles/zsh/.zpreztorc ~/.zpreztorc
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 echo 'Add zsh as a login shell'
 command -v zsh | sudo tee -a /etc/shells
