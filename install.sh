@@ -1,11 +1,17 @@
 #!/bin/bash
-
 set -x
 
 echo '📦 Installing nix package manager'
 curl -L https://nixos.org/nix/install | sh
 
-# TODO: source nix
+echo 'Source nix'
+if [ `uname -s` = 'Darwin' ]; then
+    if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    fi
+else
+    . ~/.nix-profile/etc/profile.d/nix.sh
+fi
 
 echo '🚀 Install packages'
 packages=(
@@ -17,6 +23,7 @@ packages=(
     ripgrep
     zsh
 )
+# TODO: Add asdf and npm
 
 for package in ${packages[@]}
 do
@@ -35,6 +42,9 @@ for stow_dir in ${stow_dirs[@]}
 do 
     stow $stow_dir
 done
+
+echo '📦 Install neovim packages'
+nvim --headless +PackerSync
 
 echo '🚀 Install zprezto'
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
