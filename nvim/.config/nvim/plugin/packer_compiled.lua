@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/ayhan/.local/share/nvim/site/pack/packer/start/filetype.nvim",
     url = "https://github.com/nathom/filetype.nvim"
   },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/Users/ayhan/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/ayhan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
