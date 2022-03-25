@@ -22,6 +22,7 @@ packages=(
     tmux
     ripgrep
     zsh
+    go
 )
 # TODO: Add asdf and npm
 
