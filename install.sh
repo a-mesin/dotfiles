@@ -46,7 +46,7 @@ do
 done
 
 echo '📦 Install neovim packages'
-nvim --headless +PackerSync
+nvim --headless +PackerInstall
 
 echo '🚀 Install zprezto'
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
