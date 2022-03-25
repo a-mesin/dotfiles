@@ -24,6 +24,7 @@ packages=(
     zsh
     go
     openjdk17
+    maven
 )
 # TODO: Add asdf and npm
 
