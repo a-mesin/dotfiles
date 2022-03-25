@@ -23,6 +23,7 @@ packages=(
     ripgrep
     zsh
     go
+    openjdk17
 )
 # TODO: Add asdf and npm
 
