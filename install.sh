@@ -25,8 +25,9 @@ packages=(
     go
     openjdk17
     maven
+    nodejs
+    nodePackages.npm
 )
-# TODO: Add asdf and npm
 
 for package in ${packages[@]}
 do
