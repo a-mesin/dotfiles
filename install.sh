@@ -46,6 +46,10 @@ do
     stow $stow_dir
 done
 
+echo '📦 Install Nvim Packer'
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 echo '📦 Install neovim packages'
 nvim --headless +PackerInstall
 
