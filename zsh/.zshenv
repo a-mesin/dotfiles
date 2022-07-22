@@ -11,7 +11,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
+export JAVA_HOME=/Users/aym/.nix-profile/bin/java
 export GOPATH=/home/aym/.nix-profile/bin/go
 
 export PATH=$PATH:$JAVA_HOME:$GOPATH

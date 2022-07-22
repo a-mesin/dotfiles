@@ -22,13 +22,22 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+plugins=(kubectl completion zsh)
+source <(kubectl completion zsh)
+
 # Aliases
 alias ll='ls -la'
 alias v=nvim
 alias cat=bat
 
 # Configure asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+. $HOME/.asdf/asdf.sh
+
+# Kubectl Aliases
+[ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
+
+alias kns='kubectl config set-context --current --namespace'
+alias kctx='kubectl config use-context'
 
 # Init prezto
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
