@@ -25,8 +25,6 @@ packages=(
     go
     openjdk17
     maven
-    nodejs
-    nodePackages.npm
 )
 
 for package in ${packages[@]}
