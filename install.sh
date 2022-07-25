@@ -1,6 +1,9 @@
 #!/bin/bash
 set -x
 
+
+# TODO: Change nix to homebrew
+
 echo '📦 Installing nix package manager'
 curl -L https://nixos.org/nix/install | sh
 
@@ -44,6 +47,11 @@ for stow_dir in ${stow_dirs[@]}
 do 
     stow $stow_dir
 done
+
+echo 'Install font'
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew install --cask font-jetbrains-mono
 
 echo '📦 Install Nvim Packer'
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
