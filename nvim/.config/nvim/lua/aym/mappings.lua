@@ -36,3 +36,7 @@ map('n', '<leader>fb', '<cmd> lua require(\'telescope.builtin\').buffers()<CR>',
 map('n', '<leader>fh', '<cmd> lua require(\'telescope.builtin\').help_tags()<CR>', options)
 map('n', '<leader>fgf', '<cmd> lua require(\'telescope.builtin\').git_files()<CR>', options)
 map('n', '<leader>fgc', '<cmd> lua require(\'telescope.builtin\').git_commits()<CR>', options)
+
+
+-- Go
+map('n', '<leader>gt', '<cmd> :GoTest<CR>', options)
