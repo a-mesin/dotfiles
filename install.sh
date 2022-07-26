@@ -16,6 +16,7 @@ packages=(
     go
     zulu
     maven
+    watch
 )
 
 for package in ${packages[@]}
