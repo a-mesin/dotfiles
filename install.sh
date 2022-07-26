@@ -1,20 +1,8 @@
 #!/bin/bash
 set -x
 
-
-# TODO: Change nix to homebrew
-
-echo '📦 Installing nix package manager'
-curl -L https://nixos.org/nix/install | sh
-
-echo 'Source nix'
-if [ `uname -s` = 'Darwin' ]; then
-    if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-    fi
-else
-    . ~/.nix-profile/etc/profile.d/nix.sh
-fi
+echo '📦 Installing brew'
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo '🚀 Install packages'
 packages=(
@@ -26,14 +14,14 @@ packages=(
     ripgrep
     zsh
     go
-    openjdk17
+    zulu
     maven
 )
 
 for package in ${packages[@]}
 do
     echo '📦 Installing $package'
-    nix-env -iA nixpkgs.$package
+    brew install $package
 done
 
 echo '🚀 Stow dirs'
@@ -41,6 +29,7 @@ stow_dirs=(
     zsh
     tmux
     nvim
+    kitty
 )
 
 for stow_dir in ${stow_dirs[@]}
@@ -68,8 +57,4 @@ command -v zsh | sudo tee -a /etc/shells
 
 echo 'Use zsh as default shell'
 sudo chsh -s $(which zsh) $USER
-
-# Use kitty terminal on MacOS
-[ `uname -s` = 'Darwin' ] && stow kitty
-
 
