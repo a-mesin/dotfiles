@@ -13,7 +13,7 @@ packages=(
     tmux
     ripgrep
     zsh
-    go
+    golang
     zulu
     maven
     watch
