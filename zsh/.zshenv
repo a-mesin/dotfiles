@@ -13,7 +13,7 @@ fi
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-18.jdk/Contents/Home
 export GOROOT=/usr/local/go
-export GOPATH=$HOME/golang
+export GOPATH=$HOME/go
 
 export PATH=$PATH:$JAVA_HOME:$GOPATH/bin:$GOROOT/bin
 
