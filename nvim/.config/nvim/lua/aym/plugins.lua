@@ -55,6 +55,12 @@ return require('packer').startup(function()
         requires = { 'kyazdani42/nvim-web-devicons' }
     }
 
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
     -- Optimizes startup time
     use 'nathom/filetype.nvim'
 end)

@@ -11,9 +11,10 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-18.jdk/Contents/Home
-export GOROOT=/usr/local/go
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-19.jdk/Contents/Home
+export GOROOT=/opt/homebrew/opt/go/libexec
 export GOPATH=$HOME/go
+export KUBE_EDITOR=/opt/homebrew/bin/nvim
 
 export PATH=$PATH:$JAVA_HOME:$GOPATH/bin:$GOROOT/bin
 

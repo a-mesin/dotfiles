@@ -19,4 +19,4 @@ opt.termguicolors = true
 opt.smartindent = true -- auto indents when pressing enter in needed places
 opt.swapfile = false -- disables swap file
 opt.wrap = false -- disables wrapping when line exceeds screen
-opt.colorcolumn = '100' -- display colored column at specified position
+opt.colorcolumn = '120' -- display colored column at specified position

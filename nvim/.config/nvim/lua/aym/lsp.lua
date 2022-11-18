@@ -31,8 +31,7 @@ local custom_attach = function(client, bufnr)
 
 end
 
-local updated_capabilities = vim.lsp.protocol.make_client_capabilities()
-updated_capabilities = require('cmp_nvim_lsp').update_capabilities(updated_capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -53,7 +52,7 @@ local setup_server = function(server, config)
 
   config = vim.tbl_deep_extend("force", {
     on_attach = custom_attach,
-    capabilities = updated_capabilities,
+    capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
     },

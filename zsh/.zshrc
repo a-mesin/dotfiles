@@ -41,3 +41,4 @@ alias kctx='kubectl config use-context'
 
 # Init prezto
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+export GPG_TTY=$(tty)
