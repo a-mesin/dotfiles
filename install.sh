@@ -17,6 +17,9 @@ packages=(
     zulu
     maven
     watch
+    raycast
+    rectangle
+    wget
 )
 
 for package in ${packages[@]}

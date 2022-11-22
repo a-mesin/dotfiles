@@ -31,7 +31,7 @@ alias v=nvim
 alias cat=bat
 
 # Configure asdf
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
 # Kubectl Aliases
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases

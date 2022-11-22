@@ -60,6 +60,12 @@ return require('packer').startup(function()
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+    
+    -- Commenting
+    use {
+        'numToStr/Comment.nvim',
+        config = function() require('Comment').setup() end
+    }
 
     -- Optimizes startup time
     use 'nathom/filetype.nvim'
