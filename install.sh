@@ -33,7 +33,6 @@ stow_dirs=(
     zsh
     tmux
     nvim
-    kitty
 )
 
 for stow_dir in ${stow_dirs[@]}
