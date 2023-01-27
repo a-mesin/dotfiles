@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
+  ensure_installed = { "help", "go", "typescript", "javascript", "lua" }
   ignore_install = { "phpdoc" },
   sync_install = false,
   highlight = {
