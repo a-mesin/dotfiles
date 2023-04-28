@@ -1,7 +1,3 @@
-local map = vim.api.nvim_set_keymap
-
-vim.g.mapleader = ' '
-
 -- Nvim Tree
 vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<leader>nf', ':NvimTreeFocus<CR>')
@@ -36,3 +32,6 @@ vim.keymap.set('n', '<leader>fgc', '<cmd> lua require(\'telescope.builtin\').git
 
 -- Go
 vim.keymap.set('n', '<leader>gt', '<cmd> :GoTest<CR>')
+
+-- Toggle Term
+vim.keymap.set('n', '<leader>t', '<cmd> :ToggleTerm direction=float<CR>')

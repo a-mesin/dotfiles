@@ -19,3 +19,4 @@ vim.opt.smartindent = true -- auto indents when pressing enter in needed places
 vim.opt.swapfile = false -- disables swap file
 vim.opt.wrap = false -- disables wrapping when line exceeds screen
 vim.opt.colorcolumn = '120' -- display colored column at specified position
+vim.opt.clipboard:append('unnamedplus')-- copy/paste from/to system clipboard
