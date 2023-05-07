@@ -20,6 +20,8 @@ packages=(
     raycast
     rectangle
     wget
+    procs
+    fzf
 )
 
 for package in ${packages[@]}

@@ -1,7 +1,5 @@
 -- Nvim Tree
-vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
-vim.keymap.set('n', '<leader>nf', ':NvimTreeFocus<CR>')
-vim.keymap.set('n', '<leader>nc', ':NvimTreeClose<CR>')
+vim.keymap.set('n', '<leader>n', ':NeoTreeShowToggle<CR>')
 
 -- Move lines
 vim.keymap.set('n', '<leader>j', ':m .+1<CR>==')
