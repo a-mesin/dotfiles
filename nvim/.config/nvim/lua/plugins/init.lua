@@ -1,6 +1,6 @@
 return {
     -- Theme
-    "folke/tokyonight.nvim",
+    "rebelot/kanagawa.nvim",
 
     -- Telescope
     "nvim-lua/plenary.nvim",
