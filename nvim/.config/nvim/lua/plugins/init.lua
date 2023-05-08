@@ -85,16 +85,18 @@ return {
         version = "*",
         dependencies = "nvim-tree/nvim-web-devicons",
         opts = {
-            offsets = {
-                {
-                    filetype = "neo-tree",
-                    text = "Neo-tree",
-                    highlight = "Directory",
-                    text_align = "left",
+            options = {
+                offsets = {
+                    {
+                        filetype = "neo-tree",
+                        text = "Neo-tree",
+                        highlight = "Directory",
+                        text_align = "left",
+                    }
                 }
             }
         },
-        config = function() require('bufferline').setup(opts) end
+        config = function(_, opts) require('bufferline').setup(opts) end
     },
 
     -- Cmd replacement
@@ -128,7 +130,7 @@ return {
             symbol = "│",
             options = { try_as_border = true },
         },
-        config = function() require("mini.indentscope").setup(opts) end
+        config = function(_, opts) require("mini.indentscope").setup(opts) end
     },
 
     -- Optimizes startup time

@@ -14,11 +14,17 @@ vim.keymap.set('n', '<C-k>', '<C-W><C-k>')
 vim.keymap.set('n', '<C-h>', '<C-W><C-h>')
 vim.keymap.set('n', '<C-l>', '<C-W><C-l>')
 
-vim.keymap.set('i', 'jk', '<esc>') -- Exit insert mode with jk 
+vim.keymap.set('i', 'jk', '<esc>') -- Exit insert mode with jk
 
-vim.keymap.set('n', 'Y', 'y$') -- Fix yanking
-vim.keymap.set('n', 'n', 'nzz') -- centre when searching
+vim.keymap.set('n', 'Y', 'y$')     -- Fix yanking
+vim.keymap.set('n', 'n', 'nzz')    -- centre when searching
 vim.keymap.set('n', 'N', 'Nzz')
+
+-- Buffer
+vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>")
+vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>")
+vim.keymap.set("n", "<leader>bb", "<cmd>e #<cr>")
+vim.keymap.set("n", "<leader>bd", "<cmd> lua require(\'mini.bufremove\').delete(0, false)<CR>")
 
 -- Telescope
 vim.keymap.set('n', '<leader>ff', '<cmd> lua require(\'telescope.builtin\').find_files()<CR>')
