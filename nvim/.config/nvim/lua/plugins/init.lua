@@ -35,6 +35,12 @@ return {
         build = ":GoUpdateBinaries"
     },
 
+    -- Git signs
+    {
+        'lewis6991/gitsigns.nvim',
+        config = function() require('gitsigns').setup() end
+    },
+
     -- File nav tree
     {
         "nvim-neo-tree/neo-tree.nvim",
