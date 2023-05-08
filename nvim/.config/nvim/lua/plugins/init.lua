@@ -107,6 +107,9 @@ return {
         dependencies = "nvim-tree/nvim-web-devicons",
         opts = {
             options = {
+                always_show_bufferline = false,
+                diagnostics = "nvim_lsp",
+                show_buffer_close_icons = false,
                 offsets = {
                     {
                         filetype = "neo-tree",
@@ -114,7 +117,7 @@ return {
                         highlight = "Directory",
                         text_align = "left",
                     }
-                }
+                },
             }
         },
         config = function(_, opts) require('bufferline').setup(opts) end
