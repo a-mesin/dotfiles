@@ -35,7 +35,6 @@ stow_dirs=(
     zsh
     tmux
     nvim
-    zellij
 )
 
 for stow_dir in ${stow_dirs[@]}
