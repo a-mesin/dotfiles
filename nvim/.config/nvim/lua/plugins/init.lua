@@ -163,6 +163,13 @@ return {
         config = function(_, opts) require("mini.indentscope").setup(opts) end
     },
 
+    -- TODO comments
+    {
+        "folke/todo-comments.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
+        config = function() require("todo-comments").setup {} end
+    },
+
     -- Optimizes startup time
     "nathom/filetype.nvim",
 }
