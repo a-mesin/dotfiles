@@ -1,38 +1,38 @@
 return {
     -- Theme
-    "rebelot/kanagawa.nvim",
+    'shaunsingh/nord.nvim',
 
     -- Telescope
-    "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim",
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
 
     -- LSP
     {
-        "VonHeikemen/lsp-zero.nvim",
+        'VonHeikemen/lsp-zero.nvim',
         dependencies = {
             -- LSP Support
-            { "neovim/nvim-lspconfig" },
-            { "williamboman/mason.nvim" },
-            { "williamboman/mason-lspconfig.nvim" },
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
-            { "hrsh7th/nvim-cmp" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "saadparwaiz1/cmp_luasnip" },
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-nvim-lua" },
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            { "L3MON4D3/LuaSnip" },
-            { "rafamadriz/friendly-snippets" },
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
         },
     },
 
     -- Go
     {
-        "fatih/vim-go",
-        build = ":GoUpdateBinaries"
+        'fatih/vim-go',
+        build = ':GoUpdateBinaries'
     },
 
     -- Git signs
@@ -43,15 +43,15 @@ return {
 
     -- File nav tree
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        version = "v2.x",
+        'nvim-neo-tree/neo-tree.nvim',
+        version = 'v2.x',
         dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+            'MunifTanjim/nui.nvim',
             {
                 's1n7ax/nvim-window-picker',
-                version = "v1.*",
+                version = 'v1.*',
                 config = function()
                     require('window-picker').setup({
                         autoselect_one = true,
@@ -60,10 +60,10 @@ return {
                             -- filter using buffer options
                             bo = {
                                 -- if the file type is one of following, the window will be ignored
-                                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                                filetype = { 'neo-tree', 'neo-tree-popup', 'notify' },
 
                                 -- if the buffer type is one of following, the window will be ignored
-                                buftype = { 'terminal', "quickfix" },
+                                buftype = { 'terminal', 'quickfix' },
                             },
                         },
                         other_win_hl_color = '#e35e4f',
@@ -75,75 +75,59 @@ return {
 
     -- Treesitter
     {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-        dependencies = { "p00f/nvim-ts-rainbow" },
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        dependencies = { 'p00f/nvim-ts-rainbow' },
     },
 
     -- Status line
-    "nvim-lualine/lualine.nvim",
+    'nvim-lualine/lualine.nvim',
 
     -- install without yarn or npm
     {
-        "iamcco/markdown-preview.nvim",
+        'iamcco/markdown-preview.nvim',
         build = function()
-            vim.fn["mkdp#util#install"]()
+            vim.fn['mkdp#util#install']()
         end,
     },
 
     -- Commenting
     {
-        "numToStr/Comment.nvim",
+        'numToStr/Comment.nvim',
         config = function()
-            require("Comment").setup()
+            require('Comment').setup()
         end,
     },
 
     -- Toggle Terminal
     {
-        "akinsho/toggleterm.nvim",
-        version = "*",
+        'akinsho/toggleterm.nvim',
+        version = '*',
         config = true
     },
 
     -- Bufferline
     {
-        "akinsho/bufferline.nvim",
-        version = "*",
-        dependencies = "nvim-tree/nvim-web-devicons",
-        opts = {
-            options = {
-                always_show_bufferline = false,
-                diagnostics = "nvim_lsp",
-                show_buffer_close_icons = false,
-                offsets = {
-                    {
-                        filetype = "neo-tree",
-                        text = "Neo-tree",
-                        highlight = "Directory",
-                        text_align = "left",
-                    }
-                },
-            }
-        },
-        config = function(_, opts) require('bufferline').setup(opts) end
+        'akinsho/bufferline.nvim',
+        version = '*',
+        dependencies = 'nvim-tree/nvim-web-devicons',
     },
 
     -- Cmd replacement
     {
-        "folke/noice.nvim",
-        version = "*",
+        'folke/noice.nvim',
+        version = '*',
         dependencies = {
-            "MunifTanjim/nui.nvim"
+            'MunifTanjim/nui.nvim'
         },
         config = function() require('noice').setup() end,
     },
 
     -- Autopair
     {
-        "echasnovski/mini.pairs",
-        version = "*",
-        config = function() require("mini.pairs").setup() end
+        'echasnovski/mini.pairs',
+        version = '*',
+        config = function() require('mini.pairs').setup() end
     },
 
     -- Buffer Remove
@@ -157,12 +141,12 @@ return {
         'echasnovski/mini.indentscope',
         version = '*',
         opts = {
-            symbol = "│",
+            symbol = '│',
             options = { try_as_border = true },
         },
-        config = function(_, opts) require("mini.indentscope").setup(opts) end
+        config = function(_, opts) require('mini.indentscope').setup(opts) end
     },
 
     -- Optimizes startup time
-    "nathom/filetype.nvim",
+    'nathom/filetype.nvim',
 }

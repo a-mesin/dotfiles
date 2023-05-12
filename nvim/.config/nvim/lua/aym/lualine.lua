@@ -1,8 +1,8 @@
-local kanagawa = require("lualine.themes.kanagawa")
+local nord = require("lualine.themes.nord")
 
 require('lualine').setup {
     options = {
-        theme = kanagawa,
+        theme = nord,
         component_separators = '|',
     },
     sections = {

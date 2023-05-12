@@ -6,4 +6,4 @@ require('aym.lsp')
 require('aym.go')
 require('aym.treesitter')
 require('aym.lazygit')
-
+require('aym.bufferline')
