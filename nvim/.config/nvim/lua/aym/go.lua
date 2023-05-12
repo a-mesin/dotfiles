@@ -1,14 +1,26 @@
-local g = vim.g
-
-g.go_highlight_fields = 1
-g.go_highlight_functions = 1
-g.go_highlight_function_calls = 1
-g.go_highlight_extra_types = 1
-g.go_highlight_operators = 1
-
-g.go_fmt_autosave = 1
-g.go_fmt_command = "goimports"
-
-g.go_metalinter_autosave = 1
-g.go_metalinter_autosave_enabled = { 'vet', 'errcheck', 'staticcheck' }
-g.go_metalinter_command = 'golangci-lint'
+-- local g = vim.g
+--
+-- g.go_highlight_structs = 1
+-- g.go_highlight_methods = 1
+-- g.go_highlight_functions = 1
+-- g.go_highlight_function_calls = 1
+-- g.go_highlight_function_parameters = 1
+-- g.go_highlight_extra_types = 1
+-- g.go_highlight_operators = 1
+-- g.go_highlight_types = 1
+-- g.go_highlight_fields = 1
+-- g.go_highlight_build_constraints = 1
+-- g.go_highlight_generate_tags = 1
+-- g.go_highlight_format_strings = 1
+-- g.go_highlight_variable_declarations = 1
+-- g.go_highlight_variable_assignments = 1
+-- g.go_auto_type_info = 1
+-- g.go_mod_fmt_autosave = 1
+-- g.go_gopls_enabled = 1
+--
+-- g.go_fmt_autosave = 1
+-- g.go_fmt_command = "goimports"
+--
+-- g.go_metalinter_autosave = 1
+-- g.go_metalinter_autosave_enabled = { 'vet', 'errcheck', 'staticcheck' }
+-- g.go_metalinter_command = 'golangci-lint'
