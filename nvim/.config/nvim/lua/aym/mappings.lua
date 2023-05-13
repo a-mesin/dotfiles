@@ -29,44 +29,17 @@ local wk = require('which-key')
 wk.register({
     b = {
         name = 'Buffers',
-        b = {
-            '<cmd>e #<cr>',
-            'Switch to last buffer',
-        },
-        d = {
-            '<cmd> lua require(\'mini.bufremove\').delete(0, false)<CR>',
-            'Remove buffer',
-        }
+        b = { '<cmd>e #<cr>', 'Switch to last buffer' },
+        d = { '<cmd> lua require(\'mini.bufremove\').delete(0, false)<CR>', 'Remove buffer' }
     },
     f = {
         name = 'Find',
-        f = {
-            '<cmd> lua require(\'telescope.builtin\').find_files()<CR>',
-            'Files'
-        },
-        g = {
-            '<cmd> lua require(\'telescope.builtin\').live_grep()<CR>',
-            'Grep'
-        },
-        b = {
-            '<cmd> lua require(\'telescope.builtin\').buffers()<CR>',
-            'Buffers'
-        },
-        h = {
-            '<cmd> lua require(\'telescope.builtin\').help_tags()<CR>',
-            'Help Tags'
-        },
-        gf = {
-            '<cmd> lua require(\'telescope.builtin\').git_files()<CR>',
-            'Git files'
-        },
-        gc = {
-            '<cmd> lua require(\'telescope.builtin\').git_commits()<CR>',
-            'Git commits'
-        }
+        f = { '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', 'Files' },
+        g = { '<cmd> lua require(\'telescope.builtin\').live_grep()<CR>', 'Grep' },
+        b = { '<cmd> lua require(\'telescope.builtin\').buffers()<CR>', 'Buffers' },
+        h = { '<cmd> lua require(\'telescope.builtin\').help_tags()<CR>', 'Help Tags' },
+        gf = { '<cmd> lua require(\'telescope.builtin\').git_files()<CR>', 'Git files' },
+        gc = { '<cmd> lua require(\'telescope.builtin\').git_commits()<CR>', 'Git commits' }
     },
-    t = {
-        '<cmd> :ToggleTerm direction=float<CR>',
-        'Open Terminal'
-    }
+    t = { '<cmd> :ToggleTerm direction=float<CR>', 'Open Terminal' }
 }, { prefix = '<leader>' })

@@ -41,36 +41,14 @@ lsp.on_attach(function(_, bufnr)
     wk.register({
         l = {
             name = "LSP",
-            d = {
-                '<cmd>Telescope lsp_definitions<cr>',
-                'Go to definition'
-            },
-            r = {
-                '<cmd>Telescope lsp_references<cr>',
-                'References'
-            },
-            k = {
-                '<cmd>lua vim.lsp.buf.hover()<cr>',
-                'Hover'
-            },
-            wd = {
-                '<cmd>Telescope diagnostics<cr>',
-                'Diagnostics'
-            },
-            ws = {
-                '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>',
-                'Symbols'
-            },
-            a = {
-                '<cmd>lua vim.lsp.buf.code_action()<cr>',
-                'Code Action'
-            },
-            rn = {
-                '<cmd> lua vim.lsp.buf.rename()<cr>',
-                'Rename'
-            }
+            d = { '<cmd>Telescope lsp_definitions<cr>', 'Go to definition' },
+            r = { '<cmd>Telescope lsp_references<cr>', 'References' },
+            k = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'Hover' },
+            wd = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
+            ws = { '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Symbols' },
+            a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code Action' },
+            rn = { '<cmd> lua vim.lsp.buf.rename()<cr>', 'Rename' }
         }
-
     }, { prefix = '<leader>', buffer = bufnr, remap = false })
 
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
