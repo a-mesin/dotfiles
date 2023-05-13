@@ -1,4 +1,4 @@
-require('aym.remap')
+require('aym.mappings')
 require('aym.options')
 require('aym.theme')
 require('aym.lualine')
