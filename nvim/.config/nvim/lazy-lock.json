@@ -23,6 +23,7 @@
   "mini.pairs": { "branch": "main", "commit": "771c08bd313614c7e9a1904d277ac76eb226f674" },
   "mini.surround": { "branch": "main", "commit": "cc962bae0890217f8473390abc8cef988519d370" },
   "neo-tree.nvim": { "branch": "v2.x", "commit": "541f5c92d2492041afb354e2df6e74809094b051" },
+  "neodev.nvim": { "branch": "main", "commit": "7c6999ba7d8fdf36991b0aeed034b0cb299ce1eb" },
   "noice.nvim": { "branch": "main", "commit": "13c3b39e43fbd0f50dac608fdbda230dec69f1d1" },
   "nord.nvim": { "branch": "master", "commit": "fab04b2dd4b64f4b1763b9250a8824d0b5194b8f" },
   "nui.nvim": { "branch": "main", "commit": "698e75814cd7c56b0dd8af4936bcef2d13807f3c" },
@@ -37,5 +38,6 @@
   "plenary.nvim": { "branch": "master", "commit": "9ac3e9541bbabd9d73663d757e4fe48a675bb054" },
   "telescope.nvim": { "branch": "master", "commit": "d77b37f4520e5fc2cf4c74c12e42ed4b589bd367" },
   "todo-comments.nvim": { "branch": "main", "commit": "8febc60a76feefd8203077ef78b6a262ea1a41f9" },
-  "toggleterm.nvim": { "branch": "main", "commit": "026dff5e2b504941cf172691561a67ea362596aa" }
+  "toggleterm.nvim": { "branch": "main", "commit": "026dff5e2b504941cf172691561a67ea362596aa" },
+  "which-key.nvim": { "branch": "main", "commit": "5a6c954a5a46023c19acc03a8b6d7c3e57964fc5" }
 }

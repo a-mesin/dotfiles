@@ -168,6 +168,19 @@ return {
         config = function() require("todo-comments").setup {} end
     },
 
+    -- Key Mappings
+    {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup()
+        end,
+    },
+
+    -- Neodev
+    'folke/neodev.nvim',
+
     -- Optimizes startup time
     'nathom/filetype.nvim',
 }
