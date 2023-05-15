@@ -3,21 +3,14 @@ require("neodev").setup({})
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
-
 lsp.ensure_installed({
-    'gopls', 'lua_language_server'
+    'gopls'
 })
 
 local cmp = require('cmp')
 local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
 })
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings
@@ -41,9 +34,6 @@ lsp.on_attach(function(_, bufnr)
     wk.register({
         l = {
             name = "LSP",
-            d = { '<cmd>Telescope lsp_definitions<cr>', 'Go to definition' },
-            r = { '<cmd>Telescope lsp_references<cr>', 'References' },
-            k = { '<cmd>lua vim.lsp.buf.hover()<cr>', 'Hover' },
             wd = { '<cmd>Telescope diagnostics<cr>', 'Diagnostics' },
             ws = { '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Symbols' },
             a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code Action' },
