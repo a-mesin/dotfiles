@@ -159,4 +159,7 @@ return {
 
     -- Neodev
     'folke/neodev.nvim',
+
+    -- Find & replace across folders
+    'nvim-pack/nvim-spectre'
 }
