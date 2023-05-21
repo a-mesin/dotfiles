@@ -19,11 +19,12 @@ return {
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
+            { 'jose-elias-alvarez/null-ls.nvim' },
 
             -- Snippets
+            { 'saadparwaiz1/cmp_luasnip' },
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         },
@@ -48,6 +49,9 @@ return {
     -- Debugging
     'mfussenegger/nvim-dap',
     'rcarriga/nvim-dap-ui',
+
+    -- Git
+    "kdheepak/lazygit.nvim",
 
     -- Git signs
     {
@@ -92,13 +96,6 @@ return {
         end,
     },
 
-    -- Toggle Terminal
-    {
-        'akinsho/toggleterm.nvim',
-        version = '*',
-        config = true
-    },
-
     -- Bufferline
     {
         'akinsho/bufferline.nvim',
@@ -140,26 +137,17 @@ return {
         config = function(_, opts) require('mini.indentscope').setup(opts) end
     },
 
-    -- TODO comments
-    {
-        "folke/todo-comments.nvim",
-        dependencies = "nvim-lua/plenary.nvim",
-        config = function() require("todo-comments").setup {} end
-    },
-
-    -- Key Mappings
-    {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-            require("which-key").setup()
-        end,
-    },
-
     -- Neodev
     'folke/neodev.nvim',
 
     -- Find & replace across folders
-    'nvim-pack/nvim-spectre'
+    'nvim-pack/nvim-spectre',
+
+    {
+        "folke/trouble.nvim",
+        dependencies = "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("trouble").setup()
+        end
+    }
 }

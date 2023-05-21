@@ -1,13 +1,13 @@
 -- Neo Tree
-vim.keymap.set('n', '<leader>n', ':NeoTreeShowToggle<CR>')
+vim.keymap.set('n', '<leader>n', ':NeoTreeShowToggle<cr>')
 
 -- Move lines
-vim.keymap.set('n', '<leader>j', ':m .+1<CR>==', { desc = 'Move line up' })
-vim.keymap.set('n', '<leader>k', ':m .-2<CR>==', { desc = 'Move line down' })
-vim.keymap.set('i', '<C-k>', '<esc>:m .-2<CR>==')
-vim.keymap.set('i', '<C-j>', '<esc>:m .+1<CR>==')
-vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv')
-vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv')
+vim.keymap.set('n', '<leader>j', ':m .+1<cr>==')
+vim.keymap.set('n', '<leader>k', ':m .-2<cr>==')
+vim.keymap.set('i', '<C-k>', '<esc>:m .-2<cr>==')
+vim.keymap.set('i', '<C-j>', '<esc>:m .+1<cr>==')
+vim.keymap.set('v', 'J', ':m \'>+1<cr>gv=gv')
+vim.keymap.set('v', 'K', ':m \'<-2<cr>gv=gv')
 
 vim.keymap.set('n', '<C-j>', '<C-W><C-j>')
 vim.keymap.set('n', '<C-k>', '<C-W><C-k>')
@@ -20,26 +20,22 @@ vim.keymap.set('n', 'Y', 'y$')     -- Fix yanking
 vim.keymap.set('n', 'n', 'nzz')    -- centre when searching
 vim.keymap.set('n', 'N', 'Nzz')
 
--- Buffer
-vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>")
-vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>")
+vim.keymap.set('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format()<cr>')
 
--- <leader> base mappings
-local wk = require('which-key')
-wk.register({
-    b = {
-        name = 'Buffers',
-        b = { '<cmd>e #<cr>', 'Switch to last buffer' },
-        d = { '<cmd> lua require(\'mini.bufremove\').delete(0, false)<CR>', 'Remove buffer' }
-    },
-    f = {
-        name = 'Find',
-        f = { '<cmd> lua require(\'telescope.builtin\').find_files()<CR>', 'Files' },
-        g = { '<cmd> lua require(\'telescope.builtin\').live_grep()<CR>', 'Grep' },
-        b = { '<cmd> lua require(\'telescope.builtin\').buffers()<CR>', 'Buffers' },
-        h = { '<cmd> lua require(\'telescope.builtin\').help_tags()<CR>', 'Help Tags' },
-        gf = { '<cmd> lua require(\'telescope.builtin\').git_files()<CR>', 'Git files' },
-        gc = { '<cmd> lua require(\'telescope.builtin\').git_commits()<CR>', 'Git commits' }
-    },
-    t = { '<cmd> :ToggleTerm direction=float<CR>', 'Open Terminal' }
-}, { prefix = '<leader>' })
+-- Buffer
+vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>')
+vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>')
+vim.keymap.set('n', 'bb', '<cmd>e #<cr>')
+vim.keymap.set('n', 'bd', '<cmd> lua require(\'mini.bufremove\').delete(0, false)<cr>')
+
+-- Telescope
+vim.keymap.set('n', 'ff', '<cmd> lua require(\'telescope.builtin\').find_files()<cr>')
+vim.keymap.set('n', 'fg', '<cmd> lua require(\'telescope.builtin\').live_grep()<cr>')
+vim.keymap.set('n', 'fb', '<cmd> lua require(\'telescope.builtin\').buffers()<cr>')
+vim.keymap.set('n', 'fh', '<cmd> lua require(\'telescope.builtin\').help_tags()<cr>')
+vim.keymap.set('n', 'fgf', '<cmd> lua require(\'telescope.builtin\').git_files()<cr>')
+vim.keymap.set('n', 'fgc', '<cmd> lua require(\'telescope.builtin\').git_commits()<cr>')
+
+-- LazyGit
+vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<cr>')
+vim.keymap.set('n', '<leader>gh', '<cmd>LazyGitFilterCurrentFile<cr>')
