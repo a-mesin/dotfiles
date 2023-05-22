@@ -11,7 +11,13 @@ require('lualine').setup {
         },
         lualine_b = { 'filename', 'branch' },
         lualine_c = { 'fileformat' },
-        lualine_x = {},
+        lualine_x = {
+            {
+                require("noice").api.statusline.mode.get,
+                cond = require("noice").api.statusline.mode.has,
+                color = { fg = "#81A1C1" },
+            }
+        },
         lualine_y = { 'filetype', 'progress' },
         lualine_z = {
             { 'location', left_padding = 2 },
