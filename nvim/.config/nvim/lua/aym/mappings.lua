@@ -25,8 +25,8 @@ vim.keymap.set('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format()<cr>')
 -- Buffer
 vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>')
 vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>')
-vim.keymap.set('n', 'bb', '<cmd>e #<cr>')
-vim.keymap.set('n', 'bd', '<cmd> lua require(\'mini.bufremove\').delete(0, false)<cr>')
+vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>')
+vim.keymap.set('n', '<leader>bd', '<cmd> lua require(\'mini.bufremove\').delete(0, false)<cr>')
 
 -- Telescope
 vim.keymap.set('n', 'ff', '<cmd> lua require(\'telescope.builtin\').find_files()<cr>')
