@@ -9,7 +9,8 @@ local sources = {
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.formatting.markdownlint,
-    null_ls.builtins.diagnostics.markdownlint
+    null_ls.builtins.diagnostics.markdownlint,
+    null_ls.builtins.formatting.jq,
 }
 
 null_ls.setup({
