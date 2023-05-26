@@ -9,6 +9,7 @@ lsp.ensure_installed({
 lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
     lsp.buffer_autoformat()
+    lsp.default_keymaps(opts)
 
     vim.keymap.set("n", "<leader>fwd", '<cmd>Telescope diagnostics<cr>', opts)
     vim.keymap.set("n", "<leader>fws", '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', opts)
