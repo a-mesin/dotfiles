@@ -1,16 +1,30 @@
 local null_ls = require('null-ls')
+
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+
 local sources = {
-    null_ls.builtins.diagnostics.sqlfluff.with({
-        extra_args = { "--dialect", "postgres" },
-    }),
-    null_ls.builtins.formatting.sqlfluff.with({
-        extra_args = { "--dialect", "postgres" },
-    }),
-    null_ls.builtins.formatting.shfmt,
-    null_ls.builtins.diagnostics.shellcheck,
-    null_ls.builtins.formatting.markdownlint,
-    null_ls.builtins.diagnostics.markdownlint,
-    null_ls.builtins.formatting.jq,
+    -- SQL
+    diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
+    formatting.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
+
+    -- Shell
+    formatting.shfmt,
+    diagnostics.shellcheck,
+
+    -- Markdown
+    formatting.markdownlint,
+    diagnostics.markdownlint,
+
+    -- JSON
+    formatting.jq,
+
+    -- JavaScript
+    formatting.prettier,
+    diagnostics.eslint,
+
+    -- Rust
+    formatting.rustfmt,
 }
 
 null_ls.setup({

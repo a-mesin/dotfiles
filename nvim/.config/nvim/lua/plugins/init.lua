@@ -1,6 +1,9 @@
 return {
     -- Theme
-    { "EdenEast/nightfox.nvim" },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin"
+    },
 
     -- Telescope
     'nvim-lua/plenary.nvim',

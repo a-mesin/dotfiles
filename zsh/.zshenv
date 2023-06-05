@@ -15,3 +15,4 @@ export KUBE_EDITOR=/opt/homebrew/bin/nvim
 
 export PATH=$PATH:$JAVA_HOME:$GOPATH/bin:$GOROOT/bin
 
+export BAT_THEME="Catppuccin-macchiato"
