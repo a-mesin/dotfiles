@@ -29,6 +29,7 @@ source <(kubectl completion zsh)
 alias v=nvim
 alias cat=bat
 alias ls='exa -al --color=always --group-directories-first --icons'
+alias lg=lazygit
 
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 

@@ -6,40 +6,39 @@ echo '📦 Installing brew'
 
 echo '🚀 Install packages'
 packages=(
-    bat
-    git
-    neovim
-    stow
-    tmux
-    ripgrep
-    zsh
-    golang
-    zulu
-    maven
-    watch
-    raycast
-    rectangle
-    wget
-    procs
-    fzf
+	bat
+	git
+	neovim
+	stow
+	tmux
+	ripgrep
+	zsh
+	golang
+	zulu
+	maven
+	watch
+	raycast
+	rectangle
+	wget
+	procs
+	fzf
 )
 
-for package in ${packages[@]}
-do
-    echo '📦 Installing $package'
-    brew install $package
+for package in "${packages[@]}"; do
+	echo "📦 Installing $package"
+	brew install "$package"
 done
 
 echo '🚀 Stow dirs'
 stow_dirs=(
-    zsh
-    tmux
-    nvim
+	zsh
+	tmux
+	nvim
+	bat
 )
 
-for stow_dir in ${stow_dirs[@]}
-do 
-    stow $stow_dir
+for stow_dir in "${stow_dirs[@]}"; do
+	stow "$stow_dir"
 done
 
 echo 'Install font'
@@ -54,5 +53,4 @@ echo 'Add zsh as a login shell'
 command -v zsh | sudo tee -a /etc/shells
 
 echo 'Use zsh as default shell'
-sudo chsh -s $(which zsh) $USER
-
+sudo chsh -s "$(which zsh)" "$USER"
