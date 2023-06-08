@@ -22,6 +22,8 @@ packages=(
 	wget
 	procs
 	fzf
+	koekeishiya/formulae/yabai
+	koekeishiya/formulae/skhd
 )
 
 for package in "${packages[@]}"; do
@@ -35,6 +37,8 @@ stow_dirs=(
 	tmux
 	nvim
 	bat
+	yabai
+	skhd
 )
 
 for stow_dir in "${stow_dirs[@]}"; do
@@ -54,3 +58,7 @@ command -v zsh | sudo tee -a /etc/shells
 
 echo 'Use zsh as default shell'
 sudo chsh -s "$(which zsh)" "$USER"
+
+echo 'Start yabai & skhd'
+yabai --start-service
+skhd --start-service
