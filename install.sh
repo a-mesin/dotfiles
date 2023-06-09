@@ -15,7 +15,7 @@ packages=(
 	zsh
 	golang
 	zulu
-	maven
+	gradle
 	watch
 	raycast
 	rectangle
@@ -24,6 +24,7 @@ packages=(
 	fzf
 	koekeishiya/formulae/yabai
 	koekeishiya/formulae/skhd
+	starship
 )
 
 for package in "${packages[@]}"; do
@@ -49,9 +50,6 @@ echo 'Install font'
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
-
-echo '🚀 Install zprezto'
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 echo 'Add zsh as a login shell'
 command -v zsh | sudo tee -a /etc/shells
