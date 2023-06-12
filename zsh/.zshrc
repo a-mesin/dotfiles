@@ -22,4 +22,6 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 eval "$(starship init zsh)"
