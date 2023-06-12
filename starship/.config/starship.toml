@@ -8,8 +8,11 @@ vicmd_symbol = "[❮](green)"
 
 [directory]
 truncation_length = 4
-# Catppuccin 'lavender'
 style = "bold lavender"
+
+[kubernetes]
+disabled = false
+detect_folders = ['k8s', 'Deployment', 'deployment']
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
