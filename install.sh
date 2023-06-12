@@ -12,7 +12,6 @@ packages=(
 	stow
 	tmux
 	ripgrep
-	zsh
 	golang
 	zulu
 	gradle
@@ -22,6 +21,7 @@ packages=(
 	wget
 	procs
 	fzf
+	fish
 	koekeishiya/formulae/yabai
 	koekeishiya/formulae/skhd
 	starship
@@ -34,7 +34,7 @@ done
 
 echo '🚀 Stow dirs'
 stow_dirs=(
-	zsh
+	fish
 	tmux
 	nvim
 	bat
@@ -51,11 +51,14 @@ brew tap homebrew/cask
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
 
-echo 'Add zsh as a login shell'
-command -v zsh | sudo tee -a /etc/shells
+echo 'Add fish as a login shell'
+command -v fish | sudo tee -a /etc/shells
 
-echo 'Use zsh as default shell'
-sudo chsh -s "$(which zsh)" "$USER"
+echo 'Use fish as default shell'
+sudo chsh -s "$(which fish)" "$USER"
+
+echo 'Install fisher 🐟'
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
 echo 'Start yabai & skhd'
 yabai --start-service
