@@ -121,13 +121,6 @@ return {
         config = function() require('noice').setup() end,
     },
 
-    -- Autopair
-    {
-        'echasnovski/mini.pairs',
-        version = '*',
-        config = function() require('mini.pairs').setup() end
-    },
-
     -- Buffer Remove
     { 'echasnovski/mini.bufremove', version = '*' },
 
