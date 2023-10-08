@@ -131,9 +131,6 @@ return {
     -- Buffer Remove
     { 'echasnovski/mini.bufremove', version = '*' },
 
-    -- Surrounding brackets
-    { 'echasnovski/mini.surround',  version = '*' },
-
     -- Show indents
     {
         'echasnovski/mini.indentscope',
