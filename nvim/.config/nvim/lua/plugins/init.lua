@@ -24,7 +24,7 @@ return {
             { 'hrsh7th/cmp-path' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
-            { 'jose-elias-alvarez/null-ls.nvim' },
+            { 'nvimtools/none-ls.nvim' },
 
             -- Snippets
             { 'saadparwaiz1/cmp_luasnip' },
