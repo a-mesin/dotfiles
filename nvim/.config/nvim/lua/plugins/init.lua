@@ -85,6 +85,9 @@ return {
         dependencies = { 'p00f/nvim-ts-rainbow' },
     },
 
+    -- Go Templ Treesitter
+    "vrischmann/tree-sitter-templ",
+
     -- Status line
     'nvim-lualine/lualine.nvim',
 

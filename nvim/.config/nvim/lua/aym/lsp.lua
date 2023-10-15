@@ -20,6 +20,22 @@ end)
 
 lsp.setup()
 
+require("lspconfig").tailwindcss.setup({
+    filetypes = {
+        'templ',
+        'gohtml',
+        'html',
+        'markdown',
+        'javascript',
+        'vue',
+    },
+    init_options = {
+        userLanguages = {
+            templ = "html"
+        }
+    }
+})
+
 local cmp = require('cmp')
 require("luasnip.loaders.from_vscode").lazy_load()
 
