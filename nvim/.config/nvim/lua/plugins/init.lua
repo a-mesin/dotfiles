@@ -150,5 +150,8 @@ return {
         config = function()
             require("trouble").setup()
         end
-    }
+    },
+
+    -- Local LLM
+    'David-Kunz/gen.nvim'
 }
