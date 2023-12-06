@@ -153,5 +153,8 @@ return {
     },
 
     -- Local LLM
-    'David-Kunz/gen.nvim'
+    'David-Kunz/gen.nvim',
+
+    -- Rust tools
+    'simrat39/rust-tools.nvim'
 }
