@@ -20,11 +20,17 @@ local sources = {
     formatting.jq,
 
     -- JavaScript
-    formatting.prettier,
+    formatting.prettier.with {
+        filetypes = { 'html', 'javascript', 'typescript', 'css', 'scss', 'json', 'markdown', 'typescriptreact', 'js' }
+    },
     diagnostics.eslint,
 
     -- Rust
     formatting.rustfmt,
+
+    -- Kotlin
+    diagnostics.ktlint,
+    formatting.ktlint,
 }
 
 null_ls.setup({

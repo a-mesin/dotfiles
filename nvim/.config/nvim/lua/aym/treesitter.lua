@@ -1,5 +1,6 @@
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { "go", "typescript", "javascript", "lua", "vim", "sql" },
+    ensure_installed = { "go", "typescript", "javascript", "lua", "vim", "sql", "hurl" },
+    auto_install = true,
     ignore_install = { "phpdoc" },
     sync_install = false,
     highlight = {
@@ -7,7 +8,6 @@ require 'nvim-treesitter.configs'.setup {
         additional_vim_regex_highlighting = false,
     },
     rainbow = {
-        enable = true,
         extended_mode = false,
         colors = {
             "#f1fa8c",

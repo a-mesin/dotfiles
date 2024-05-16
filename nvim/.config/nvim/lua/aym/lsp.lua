@@ -1,10 +1,6 @@
 require("neodev").setup({})
 
-local lsp = require('lsp-zero').preset({})
-
-lsp.ensure_installed({
-    'gopls'
-})
+local lsp = require('lsp-zero')
 
 lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
@@ -18,7 +14,16 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
 end)
 
-lsp.setup()
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    -- Replace the language servers listed here
+    -- with the ones you want to install
+    ensure_installed = { 'tsserver', 'gopls' },
+    handlers = {
+        lsp.default_setup,
+    },
+})
+
 
 local cmp = require('cmp')
 require("luasnip.loaders.from_vscode").lazy_load()

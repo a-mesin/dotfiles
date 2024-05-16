@@ -23,3 +23,5 @@ opt.showmode = false                -- hide mode as we use statusline
 opt.list = true
 opt.splitbelow = true               -- Put new windows below current
 opt.splitright = true               -- Put new windows right of current
+opt.updatetime = 250                -- Decrease update time
+opt.scrolloff = 10                  -- Minimal number of visible lines
