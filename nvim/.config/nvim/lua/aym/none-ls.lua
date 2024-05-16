@@ -10,23 +10,23 @@ local sources = {
 
     -- Shell
     formatting.shfmt,
-    diagnostics.shellcheck,
+    require("none-ls-shellcheck.diagnostics"),
 
     -- Markdown
     formatting.markdownlint,
     diagnostics.markdownlint,
 
     -- JSON
-    formatting.jq,
+    require("none-ls.formatting.jq"),
 
     -- JavaScript
     formatting.prettier.with {
         filetypes = { 'html', 'javascript', 'typescript', 'css', 'scss', 'json', 'markdown', 'typescriptreact', 'js' }
     },
-    diagnostics.eslint,
+    require("none-ls.diagnostics.eslint_d"),
 
     -- Rust
-    formatting.rustfmt,
+    require('none-ls.formatting.rustfmt'),
 
     -- Kotlin
     diagnostics.ktlint,

@@ -7,6 +7,7 @@ return {
             vim.cmd.colorscheme("zenbones")
         end,
     },
+
     -- Telescope
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
@@ -27,6 +28,8 @@ return {
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
             { 'nvimtools/none-ls.nvim' },
+            { 'nvimtools/none-ls-extras.nvim' },
+            { 'gbprod/none-ls-shellcheck.nvim' },
 
             -- Snippets
             { 'saadparwaiz1/cmp_luasnip' },
@@ -196,7 +199,7 @@ return {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim" }
-    }
+    },
 
     -- Rust tools
     'simrat39/rust-tools.nvim'
