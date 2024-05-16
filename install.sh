@@ -26,6 +26,7 @@ packages=(
 	koekeishiya/formulae/skhd
 	starship
 	zsh-autosuggestions
+	alacritty
 )
 
 for package in "${packages[@]}"; do
