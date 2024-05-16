@@ -157,6 +157,8 @@ return {
         config = function()
             require("trouble").setup()
         end
+    -- AI tool
+    'David-Kunz/gen.nvim',
 
     -- Harpoon
     {
