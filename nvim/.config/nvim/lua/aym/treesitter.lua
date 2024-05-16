@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { "go", "typescript", "javascript", "lua", "vim", "sql", "hurl" },
+    ensure_installed = { "go", "typescript", "javascript", "lua", "vim", "sql", "hurl", "templ", "svelte" },
     auto_install = true,
     ignore_install = { "phpdoc" },
     sync_install = false,
@@ -20,3 +20,14 @@ require 'nvim-treesitter.configs'.setup {
         }
     }
 }
+
+local treesitter_parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+treesitter_parser_config.templ = {
+    install_info = {
+        url = "https://github.com/vrischmann/tree-sitter-templ.git",
+        files = { "src/parser.c", "src/scanner.c" },
+        branch = "master",
+    },
+}
+
+vim.treesitter.language.register('templ', 'templ')

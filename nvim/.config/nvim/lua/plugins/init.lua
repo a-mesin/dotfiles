@@ -26,7 +26,7 @@ return {
             { 'hrsh7th/cmp-path' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
-            { 'jose-elias-alvarez/null-ls.nvim' },
+            { 'nvimtools/none-ls.nvim' },
 
             -- Snippets
             { 'saadparwaiz1/cmp_luasnip' },
@@ -87,6 +87,9 @@ return {
         dependencies = { 'p00f/nvim-ts-rainbow' },
     },
 
+    -- Go Templ Treesitter
+    "vrischmann/tree-sitter-templ",
+
     -- Status line
     'nvim-lualine/lualine.nvim',
 
@@ -123,18 +126,8 @@ return {
         config = function() require('noice').setup() end,
     },
 
-    -- Autopair
-    {
-        'echasnovski/mini.pairs',
-        version = '*',
-        config = function() require('mini.pairs').setup() end
-    },
-
     -- Buffer Remove
     { 'echasnovski/mini.bufremove', version = '*' },
-
-    -- Surrounding brackets
-    { 'echasnovski/mini.surround',  version = '*' },
 
     -- Show indents
     {
@@ -204,4 +197,7 @@ return {
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim" }
     }
+
+    -- Rust tools
+    'simrat39/rust-tools.nvim'
 }
