@@ -1,0 +1,10 @@
+import = [
+  "~/.config/alacritty/zenbones_dark.toml"
+]
+
+[font]
+offset = { x = 1, y = 0 }
+size = 12
+
+[font.normal]
+family = "ComicShannsMono Nerd Font"
