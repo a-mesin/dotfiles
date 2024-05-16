@@ -51,7 +51,7 @@ done
 echo 'Install font'
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
-brew install --cask font-jetbrains-mono
+brew install --cask font-comic-shanns-mono-nerd-font
 
 echo 'Add fish as a login shell'
 command -v fish | sudo tee -a /etc/shells
