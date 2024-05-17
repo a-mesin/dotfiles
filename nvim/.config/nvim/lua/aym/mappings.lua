@@ -1,6 +1,3 @@
--- Neo Tree
-vim.keymap.set('n', '<leader>n', ':NeoTreeShowToggle<cr>')
-
 -- Move lines
 vim.keymap.set('n', '<leader>j', ':m .+1<cr>==')
 vim.keymap.set('n', '<leader>k', ':m .-2<cr>==')
@@ -16,8 +13,8 @@ vim.keymap.set('n', '<C-l>', '<C-W><C-l>')
 
 vim.keymap.set('i', 'jk', '<esc>') -- Exit insert mode with jk
 
-vim.keymap.set('n', 'Y', 'y$')  -- Fix yanking
-vim.keymap.set('n', 'n', 'nzz') -- centre when searching
+vim.keymap.set('n', 'Y', 'y$')     -- Fix yanking
+vim.keymap.set('n', 'n', 'nzz')    -- centre when searching
 vim.keymap.set('n', 'N', 'Nzz')
 
 vim.keymap.set('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format()<cr>')
@@ -43,3 +40,6 @@ vim.keymap.set('n', '<leader>gh', '<cmd>LazyGitFilterCurrentFile<cr>')
 -- Trouble
 vim.keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>')
 vim.keymap.set('n', 'gR', '<cmd>TroubleToggle lsp_references<cr>')
+
+-- Oil
+vim.keymap.set('n', '-', '<cmd>Oil<cr>')

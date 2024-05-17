@@ -72,15 +72,11 @@ return {
         config = function() require('gitsigns').setup() end
     },
 
-    -- File nav tree
     {
-        'nvim-neo-tree/neo-tree.nvim',
-        version = 'v2.x',
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'nvim-tree/nvim-web-devicons',
-            'MunifTanjim/nui.nvim',
-        }
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function() require("oil").setup() end
     },
 
     -- Treesitter
