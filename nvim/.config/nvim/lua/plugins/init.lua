@@ -27,15 +27,21 @@ return {
             { 'hrsh7th/cmp-path' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
-            { 'nvimtools/none-ls.nvim' },
-            { 'nvimtools/none-ls-extras.nvim' },
-            { 'gbprod/none-ls-shellcheck.nvim' },
 
             -- Snippets
             { 'saadparwaiz1/cmp_luasnip' },
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         },
+    },
+
+    -- Linting
+    'mfussenegger/nvim-lint',
+
+    -- Formatting
+    {
+        'stevearc/conform.nvim',
+        opts = {},
     },
 
     -- Go
