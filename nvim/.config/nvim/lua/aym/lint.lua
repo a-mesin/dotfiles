@@ -10,8 +10,5 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
         -- try_lint without arguments runs the linters defined in `linters_by_ft`
         -- for the current filetype
         require("lint").try_lint()
-
-        -- runs cspell on every file type
-        require("lint").try_lint("cspell")
     end,
 })
