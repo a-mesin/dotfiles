@@ -4,7 +4,6 @@ local lsp = require('lsp-zero')
 
 lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
-    lsp.buffer_autoformat()
     lsp.default_keymaps(opts)
 
     vim.keymap.set("n", "<leader>fwd", '<cmd>Telescope diagnostics<cr>', opts)

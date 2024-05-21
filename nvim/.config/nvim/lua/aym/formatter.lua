@@ -13,12 +13,11 @@ conform.setup({
         sql = { "sqlfluff" },
         markdown = { "markdownlint" },
         json = { "jq" },
-        rust = { "rustfmt" }
+        rust = { "rustfmt" },
+    },
     formatters = {
         sqlfluff = {
             prepend_args = { "--dialect", "postgres" },
         },
     },
-})
-
 })
