@@ -78,6 +78,7 @@ return {
         config = function() require('gitsigns').setup() end
     },
 
+    -- File navigation
     {
         'stevearc/oil.nvim',
         opts = {},
@@ -98,19 +99,11 @@ return {
     -- Status line
     'nvim-lualine/lualine.nvim',
 
-    -- install without yarn or npm
+    -- Markdown Preview
     {
         'iamcco/markdown-preview.nvim',
         build = function()
             vim.fn['mkdp#util#install']()
-        end,
-    },
-
-    -- Commenting
-    {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
         end,
     },
 
@@ -151,6 +144,7 @@ return {
     -- Find & replace across folders
     'nvim-pack/nvim-spectre',
 
+    -- Diagnostics
     {
         "folke/trouble.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
