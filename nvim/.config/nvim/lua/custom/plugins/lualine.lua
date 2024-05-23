@@ -9,8 +9,10 @@ return {
 			lualine_a = {
 				{ "mode", right_padding = 2 },
 			},
-			lualine_b = { "filename", "branch" },
-			lualine_c = { "fileformat" },
+			lualine_b = { { "filename", path = 1 }, "branch" },
+			lualine_c = { "diff" },
+			lualine_x = { "fileformat" },
+			lualine_y = { "encoding" },
 			lualine_z = {
 				{ "filetype", left_padding = 2 },
 			},
