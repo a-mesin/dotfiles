@@ -4,6 +4,8 @@ return {
 		require("lint").linters_by_ft = {
 			sh = { "shellcheck" },
 			javascript = { "biomejs" },
+			typescript = { "biomejs" },
+			svelte = { "biomejs" },
 			markdown = { "markdownlint" },
 			yaml = { "yamllint" },
 		}
