@@ -3,8 +3,9 @@ return {
 	config = function()
 		require("lint").linters_by_ft = {
 			sh = { "shellcheck" },
-			javascript = { "biomejs" },
-			typescript = { "biomejs" },
+			javascript = { "eslint_d" },
+			typescript = { "eslint_d" },
+			typescriptreact = { "eslint_d" },
 			svelte = { "biomejs" },
 			markdown = { "markdownlint" },
 			yaml = { "yamllint" },

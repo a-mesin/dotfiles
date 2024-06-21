@@ -11,9 +11,9 @@ return {
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = { { "biome", "prettier" } },
-				typescript = { { "biome", "prettier" } },
-				typescriptreact = { { "biome", "prettier" } },
+				javascript = { { "prettier", "biome" } },
+				typescript = { { "prettier", "biome" } },
+				typescriptreact = { { "prettier", "biome" } },
 				svelte = { "biome" },
 				sh = { "shfmt" },
 				sql = { "sqlfluff" },

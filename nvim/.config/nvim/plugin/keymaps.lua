@@ -20,7 +20,3 @@ vim.keymap.set("n", "N", "Nzz")
 -- LazyGit
 vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<cr>")
 vim.keymap.set("n", "<leader>gh", "<cmd>LazyGitFilterCurrentFile<cr>")
-
--- Trouble
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
-vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>")
