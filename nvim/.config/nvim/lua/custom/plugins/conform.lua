@@ -20,6 +20,7 @@ return {
 				markdown = { "markdownlint" },
 				json = { "jq" },
 				rust = { "rustfmt" },
+				scss = { { "prettier" } },
 			},
 			formatters = {
 				sqlfluff = {
