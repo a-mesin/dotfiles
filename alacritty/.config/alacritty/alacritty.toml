@@ -1,7 +1,7 @@
 [font]
 offset = { x = 1, y = 0 }
 size = 12
-normal.family = "ComicShannsMono Nerd Font"
+normal.family = "VictorMono Nerd Font"
 
 [env]
 TERM = "xterm-256color"
