@@ -1,13 +1,21 @@
+-- return {
+-- 	"aktersnurra/no-clown-fiesta.nvim",
+-- 	config = function()
+-- 		vim.cmd("colorscheme no-clown-fiesta")
+-- 	end,
+-- 	--
+-- }
+
 return {
-	-- "mcchrish/zenbones.nvim",
-	-- dependencies = { "rktjmp/lush.nvim" },
-	-- config = function()
-	-- 	vim.g.zenbones = { darkness = "stark" }
-	--
-	-- 	vim.cmd.colorscheme("zenbones")
-	-- end,
-	"aktersnurra/no-clown-fiesta.nvim",
+	"catppuccin/nvim",
+	name = "catppuccin",
+	lazy = false,
+	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme("no-clown-fiesta")
+		require("catppuccin").setup({
+			transparent_background = true,
+		})
+
+		vim.api.nvim_command("colorscheme catppuccin-mocha")
 	end,
 }
