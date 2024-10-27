@@ -3,32 +3,27 @@
 -- 	config = function()
 -- 		vim.cmd("colorscheme no-clown-fiesta")
 -- 	end,
--- 	--
+-- }
 
--- }
--- return {
--- 	"catppuccin/nvim",
--- 	name = "catppuccin",
--- 	lazy = false,
--- 	priority = 1000,
--- 	config = function()
--- 		require("catppuccin").setup({
--- 			transparent_background = true,
--- 		})
---
--- 		vim.api.nvim_command("colorscheme catppuccin-mocha")
--- 	end,
--- }
 return {
-	"scottmckendry/cyberdream.nvim",
+	"jesseleite/nvim-noirbuddy",
+	dependencies = {
+		{ "tjdevries/colorbuddy.nvim" },
+	},
 	lazy = false,
 	priority = 1000,
 	config = function()
-		require("cyberdream").setup({
-			transparent = true,
-			borderless_telescope = false,
+		require("noirbuddy").setup({
+			preset = "oxide",
+			colors = {
+				secondary = "#f8ff18",
+			},
 		})
 
-		vim.cmd("colorscheme cyberdream")
+		local Group = require("colorbuddy").Group
+		local colors = require("colorbuddy").colors
+
+		Group.new("@keyword", colors.secondary)
+		Group.new("@variable", colors.noir_2)
 	end,
 }

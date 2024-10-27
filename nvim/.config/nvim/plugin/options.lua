@@ -20,7 +20,6 @@ opt.wrap = false -- disables wrapping when line exceeds screen
 opt.clipboard:append("unnamedplus") -- copy/paste from/to system clipboard
 opt.mouse = "a" -- enable mouse
 opt.showmode = false -- hide mode as we use statusline
-opt.list = true
 opt.splitbelow = true -- Put new windows below current
 opt.splitright = true -- Put new windows right of current
 opt.updatetime = 250 -- Decrease update time
