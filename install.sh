@@ -6,52 +6,48 @@ echo '📦 Installing brew'
 
 echo '🚀 Install packages'
 packages=(
-	bat
-	git
-	neovim
-	stow
-	tmux
-	ripgrep
-	golang
-	zulu
-	gradle
-	watch
-	raycast
-	rectangle
-	wget
-	procs
-	fzf
-	fish
-	koekeishiya/formulae/yabai
-	koekeishiya/formulae/skhd
-	starship
-	zsh-autosuggestions
-	alacritty
+    bat
+    git
+    neovim
+    stow
+    tmux
+    ripgrep
+    golang
+    zulu
+    gradle
+    watch
+    raycast
+    rectangle
+    wget
+    procs
+    fzf
+    fish
+    koekeishiya/formulae/yabai
+    koekeishiya/formulae/skhd
+    starship
+    zsh-autosuggestions
+    wezterm
 )
 
 for package in "${packages[@]}"; do
-	echo "📦 Installing $package"
-	brew install "$package"
+    echo "📦 Installing $package"
+    brew install "$package"
 done
 
 echo '🚀 Stow dirs'
 stow_dirs=(
-	fish
-	tmux
-	nvim
-	bat
-	yabai
-	skhd
+    fish
+    tmux
+    nvim
+    bat
+    yabai
+    skhd
+    wezterm
 )
 
 for stow_dir in "${stow_dirs[@]}"; do
-	stow "$stow_dir"
+    stow "$stow_dir"
 done
-
-echo 'Install font'
-brew tap homebrew/cask
-brew tap homebrew/cask-fonts
-brew install --cask font-comic-shanns-mono-nerd-font
 
 echo 'Add fish as a login shell'
 command -v fish | sudo tee -a /etc/shells
