@@ -1,85 +1,73 @@
 return {
-	"VonHeikemen/lsp-zero.nvim",
+	"neovim/nvim-lspconfig",
 	dependencies = {
-		-- Neodev
+		-- LSP Core
 		"folke/neodev.nvim",
-
-		-- LSP Support
-		"neovim/nvim-lspconfig",
-		"williamboman/mason.nvim",
+		{ "williamboman/mason.nvim", config = true },
 		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
-		-- Autocompletion
-		"hrsh7th/nvim-cmp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-nvim-lua",
-
-		-- Snippets
-		"saadparwaiz1/cmp_luasnip",
-		"L3MON4D3/LuaSnip",
-		"rafamadriz/friendly-snippets",
+		-- Auto formatting
+		"stevearc/conform.nvim",
 	},
 	config = function()
 		require("neodev").setup({})
 
-		local lsp = require("lsp-zero")
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
+			callback = function()
+				local telescope = require("telescope.builtin")
 
-		lsp.on_attach(function(_, bufnr)
-			local opts = { buffer = bufnr, remap = false }
-			lsp.default_keymaps(opts)
-
-			vim.keymap.set("n", "<leader>fwd", "<cmd>Telescope diagnostics<cr>", opts)
-			vim.keymap.set("n", "<leader>fws", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", opts)
-			vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-			vim.keymap.set("i", "<C-h>", function()
-				vim.lsp.buf.signature_help()
-			end, opts)
-			vim.keymap.set("n", "<leader>rn", function()
-				vim.lsp.buf.rename()
-			end, opts)
-		end)
-
-		require("mason").setup({})
-		require("mason-lspconfig").setup({
-			-- Replace the language servers listed here
-			-- with the ones you want to install
-			ensure_installed = { "gopls" },
-			handlers = {
-				lsp.default_setup,
-			},
+				vim.keymap.set("n", "gd", telescope.lsp_definitions, { buffer = 0 })
+				vim.keymap.set("n", "gr", telescope.lsp_references, { buffer = 0 })
+				vim.keymap.set("n", "gI", telescope.lsp_implementations, { buffer = 0 })
+				vim.keymap.set("n", "<leader>D", telescope.lsp_type_definitions, { buffer = 0 })
+				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 })
+				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+			end,
 		})
 
-		require("lspconfig").tailwindcss.setup({
-			filetypes = {
-				"templ",
-				"gohtml",
-				"html",
-				"markdown",
-				"javascript",
-				"vue",
-			},
-			init_options = {
-				userLanguages = {
-					templ = "html",
+		local servers = {
+			gopls = {},
+			ts_ls = {
+				filetypes = {
+					"typescript",
+					"svelte",
 				},
 			},
+			rust_analyzer = {},
+			svelte = {},
+			lua_ls = {},
+		}
+
+		-- Add other tools you want to make sure are installed
+		local ensure_installed = vim.tbl_keys(servers or {})
+		vim.list_extend(ensure_installed, {
+			"stylua", -- Used to format Lua code
 		})
 
-		local cmp = require("cmp")
-		require("luasnip.loaders.from_vscode").lazy_load()
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-		cmp.setup({
-			sources = {
-				{ name = "path" },
-				{ name = "nvim_lsp" },
-				{ name = "nvim_lua" },
-				{ name = "buffer", keyword_length = 3 },
-				{ name = "luasnip", keyword_length = 2 },
-			},
-			mapping = {
-				["<C-Space>"] = cmp.mapping.complete({}),
+		require("mason").setup({})
+		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+		require("mason-lspconfig").setup({
+			handlers = {
+				function(server_name)
+					local server = servers[server_name] or {}
+					-- This handles overriding only values explicitly passed
+					-- by the server configuration above. Useful when disabling
+					-- certain features of an LSP (for example, turning off formatting for ts_ls)
+					server.capabilities = vim.tbl_deep_extend(
+						"force",
+						{},
+						capabilities,
+						server.capabilities or {},
+						require("blink.cmp").get_lsp_capabilities(server.capabilities)
+					)
+					require("lspconfig")[server_name].setup(server)
+				end,
 			},
 		})
 	end,

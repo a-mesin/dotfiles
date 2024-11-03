@@ -6,7 +6,7 @@ return {
 			javascript = { "eslint_d" },
 			typescript = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
-			svelte = { "biomejs" },
+			svelte = { "eslint_d" },
 			markdown = { "markdownlint" },
 			yaml = { "yamllint" },
 		}
