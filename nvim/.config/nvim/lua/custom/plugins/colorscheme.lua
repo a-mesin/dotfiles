@@ -5,25 +5,35 @@
 -- 	end,
 -- }
 
+-- return {
+-- 	"jesseleite/nvim-noirbuddy",
+-- 	dependencies = {
+-- 		{ "tjdevries/colorbuddy.nvim" },
+-- 	},
+-- 	lazy = false,
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("noirbuddy").setup({
+-- 			preset = "oxide",
+-- 			colors = {
+-- 				secondary = "#f8ff18",
+-- 			},
+-- 		})
+--
+-- 		local Group = require("colorbuddy").Group
+-- 		local colors = require("colorbuddy").colors
+--
+-- 		Group.new("@keyword", colors.secondary)
+-- 		Group.new("@variable", colors.noir_2)
+-- 	end,
+-- }
+
 return {
-	"jesseleite/nvim-noirbuddy",
-	dependencies = {
-		{ "tjdevries/colorbuddy.nvim" },
-	},
+	"folke/tokyonight.nvim",
 	lazy = false,
 	priority = 1000,
+	opts = {},
 	config = function()
-		require("noirbuddy").setup({
-			preset = "oxide",
-			colors = {
-				secondary = "#f8ff18",
-			},
-		})
-
-		local Group = require("colorbuddy").Group
-		local colors = require("colorbuddy").colors
-
-		Group.new("@keyword", colors.secondary)
-		Group.new("@variable", colors.noir_2)
+		vim.cmd("colorscheme tokyonight-night")
 	end,
 }
