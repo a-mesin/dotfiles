@@ -6,3 +6,6 @@ test -f ~/.config/fish/completions/kubectl_aliases.fish && source \
      (cat ~/.config/fish/completions/kubectl_aliases.fish | sed -r 's/(kubectl.*) --watch/watch \1/g' | psub)
 
 starship init fish | source
+
+# enable direnv support
+eval (direnv hook fish)
