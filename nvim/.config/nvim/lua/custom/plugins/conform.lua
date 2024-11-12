@@ -7,13 +7,13 @@ return {
 			log_level = vim.log.levels.DEBUG,
 			format_on_save = {
 				timeout_ms = 2000,
-				lsp_format = "fallback",
+				lsp_format = "never",
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = { "prettier", "biome" },
+				javascript = { "prettier" },
 				typescript = { "prettier" },
-				typescriptreact = { "prettier", "biome" },
+				typescriptreact = { "prettier" },
 				svelte = { "prettierd" },
 				sh = { "shfmt" },
 				sql = { "sqlfluff" },
@@ -21,6 +21,7 @@ return {
 				json = { "jq" },
 				rust = { "rustfmt" },
 				scss = { "prettier" },
+				go = { "goimports" },
 			},
 			formatters = {
 				sqlfluff = {
