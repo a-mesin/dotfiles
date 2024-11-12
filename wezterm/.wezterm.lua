@@ -1,6 +1,25 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+	options = {
+		theme = "tokyonight_night",
+	},
+	sections = {
+		tabline_a = { "workspace" },
+		tabline_b = {},
+		tabline_c = {},
+		tab_active = {
+			{ "tab", padding = 1 },
+		},
+		tab_inactive = { { "tab", padding = { left = 0, right = 1 } } },
+		tabline_x = { "ram", "cpu" },
+		tabline_y = { "battery" },
+		tabline_z = { "datetime" },
+	},
+})
+
 -- This will hold the configuration
 local config = wezterm.config_builder()
 
@@ -45,21 +64,23 @@ end
 -- This is where you actually apply your config choices
 config.font = wezterm.font("MonoLisa Nerd Font")
 
-config.colors = {
-	background = "#070e11",
-	foreground = "#f5f5f5",
+config.color_scheme = "tokyonight_night"
 
-	ansi = {
-		"#10181B",
-		"#fa5e86",
-		"#00d992",
-		"#f8ff18",
-		"#b4b4b4",
-		"#d5d5d5",
-		"#b4b4b4",
-		"#ffffff",
-	},
-}
+-- config.colors = {
+-- 	background = "#070e11",
+-- 	foreground = "#f5f5f5",
+--
+-- 	ansi = {
+-- 		"#10181B",
+-- 		"#fa5e86",
+-- 		"#00d992",
+-- 		"#f8ff18",
+-- 		"#b4b4b4",
+-- 		"#d5d5d5",
+-- 		"#b4b4b4",
+-- 		"#ffffff",
+-- 	},
+-- }
 
 config.window_frame = {
 	font = wezterm.font({ family = "MonoLisa Nerd Font" }),
@@ -126,6 +147,8 @@ config.keys = {
 		}),
 	},
 }
+
+tabline.apply_to_config(config)
 
 -- and finally, return the configuration to wezterm
 return config
