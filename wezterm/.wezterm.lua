@@ -4,7 +4,7 @@ local wezterm = require("wezterm")
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({
 	options = {
-		theme = "tokyonight_night",
+		theme = "Pnevma",
 	},
 	sections = {
 		tabline_a = { "workspace" },
@@ -64,7 +64,7 @@ end
 -- This is where you actually apply your config choices
 config.font = wezterm.font("MonoLisa Nerd Font")
 
-config.color_scheme = "tokyonight_night"
+config.color_scheme = "mellow"
 
 -- config.colors = {
 -- 	background = "#070e11",
