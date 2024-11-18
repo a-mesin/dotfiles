@@ -32,7 +32,9 @@ return {
 			gopls = {},
 			ts_ls = {
 				filetypes = {
+					"javascript",
 					"typescript",
+					"typescriptreact",
 					"svelte",
 				},
 			},
