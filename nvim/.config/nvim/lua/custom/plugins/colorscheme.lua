@@ -1,11 +1,4 @@
 -- return {
--- 	"aktersnurra/no-clown-fiesta.nvim",
--- 	config = function()
--- 		vim.cmd("colorscheme no-clown-fiesta")
--- 	end,
--- }
-
--- return {
 -- 	"jesseleite/nvim-noirbuddy",
 -- 	dependencies = {
 -- 		{ "tjdevries/colorbuddy.nvim" },
@@ -29,10 +22,10 @@
 -- }
 
 return {
-	"mellow-theme/mellow.nvim",
+	"AlexvZyl/nordic.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd("colorscheme mellow")
+		require("nordic").load()
 	end,
 }
