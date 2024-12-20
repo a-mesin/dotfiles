@@ -9,10 +9,6 @@ return {
 	},
 	keys = {
 		{
-			"<leader>tt",
-			"<cmd>TodoTelescope<cr>",
-		},
-		{
 			"<leader>tf",
 			"<cmd>TodoQuickFix<cr>",
 		},
