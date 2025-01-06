@@ -4,7 +4,7 @@ local wezterm = require("wezterm")
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 tabline.setup({
 	options = {
-		theme = "nordfox",
+		theme = "carbonfox",
 	},
 	sections = {
 		tabline_a = { "workspace" },
@@ -62,7 +62,7 @@ local function split_nav(resize_or_move, key)
 end
 
 -- This is where you actually apply your config choices
-config.color_scheme = "nordic"
+config.color_scheme = "carbonfox"
 config.font = wezterm.font("MonoLisa")
 
 -- Custom Noirbuddy
