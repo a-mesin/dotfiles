@@ -1,0 +1,23 @@
+font-size = 12
+font-thicken = true
+background-opacity = 0.85
+background-blur-radius = 100
+
+theme = "Jellybeans"
+
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+
+window-vsync = true
+
+bold-is-bright = true
+
+copy-on-select = true
+
+macos-titlebar-style = hidden
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-screen-color = #261c22
+macos-icon-ghost-color = #e0b22d
+
