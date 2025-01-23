@@ -18,7 +18,9 @@ return {
 			callback = function()
 				local fzf_lua = require("fzf-lua")
 
-				vim.keymap.set("n", "gd", fzf_lua.lsp_definitions, { buffer = 0 })
+				vim.keymap.set("n", "gd", function()
+					fzf_lua.lsp_definitions({ jump_to_single_result = true })
+				end, { buffer = 0 })
 				vim.keymap.set("n", "gr", fzf_lua.lsp_references, { buffer = 0 })
 				vim.keymap.set("n", "gI", fzf_lua.lsp_implementations, { buffer = 0 })
 				vim.keymap.set("n", "<leader>D", fzf_lua.lsp_typedefs, { buffer = 0 })
