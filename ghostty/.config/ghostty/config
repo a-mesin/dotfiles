@@ -3,7 +3,7 @@ font-thicken = true
 background-opacity = 0.85
 background-blur-radius = 100
 
-theme = "Jellybeans"
+theme = "lackluster"
 
 window-padding-x = 8
 window-padding-y = 8
