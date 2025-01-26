@@ -133,23 +133,23 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
-        bind "Alt h" { MoveFocusOrTab "left"; }
-        bind "Alt j" { MoveFocus "down"; }
-        bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
-        bind "Alt b" { MoveFocusOrTab "left"; }
+        bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
-        bind "Alt f" { MoveFocusOrTab "right"; }
+        bind "Alt right" { MoveFocusOrTab "right"; }
+        bind "Alt n" { NewPane; }
+        bind "Alt d" { NewPane "down"; SwitchToMode "locked"; }
+        bind "Alt r" { NewPane "right"; SwitchToMode "locked"; }
+        bind "Alt w" { CloseFocus; SwitchToMode "locked"; }
+        bind "Alt t" { NewTab; SwitchToMode "locked"; }
+        bind "Alt i" { MoveTab "left"; }
+        bind "Alt o" { MoveTab "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
-        bind "Alt x" { ToggleFloatingPanes; }
-        bind "Alt n" { NewPane; }
-        bind "Alt i" { MoveTab "left"; }
-        bind "Alt o" { MoveTab "right"; }
+        bind "Alt f" { ToggleFloatingPanes; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl g" { SwitchToMode "locked"; }
@@ -212,8 +212,8 @@ keybinds clear-defaults=true {
     }
 }
 
-// Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect
+// Plugin aliases - can be used to change the implementation of Zellij
 plugins {
     compact-bar location="zellij:compact-bar"
     configuration location="zellij:configuration"
@@ -241,7 +241,7 @@ load_plugins {
 //   - true
 //   - false (Default)
 // 
-// simplified_ui true
+simplified_ui true
  
 // Choose the theme that is specified in the themes section.
 // Default: default
@@ -265,7 +265,7 @@ default_mode "locked"
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-// default_layout "compact"
+default_layout "compact"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
@@ -291,7 +291,12 @@ default_mode "locked"
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
+
+ui {
+    pane_frames {
+    }
+}
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
