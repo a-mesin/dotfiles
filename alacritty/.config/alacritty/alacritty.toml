@@ -1,0 +1,16 @@
+live_config_reload = true
+
+import = ["~/.config/alacritty/themes/lackluster.toml"]
+
+[window]
+decorations = "none"
+opacity = 0.9
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
