@@ -16,7 +16,3 @@ vim.keymap.set("i", "jk", "<esc>") -- Exit insert mode with jk
 vim.keymap.set("n", "Y", "y$") -- Fix yanking
 vim.keymap.set("n", "n", "nzz") -- centre when searching
 vim.keymap.set("n", "N", "Nzz")
-
--- LazyGit
-vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<cr>")
-vim.keymap.set("n", "<leader>gh", "<cmd>LazyGitFilterCurrentFile<cr>")
