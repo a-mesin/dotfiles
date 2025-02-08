@@ -16,16 +16,16 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function()
-				local fzf_lua = require("fzf-lua")
+				-- local fzf_lua = require("fzf-lua")
 
-				vim.keymap.set("n", "gd", function()
-					fzf_lua.lsp_definitions({ jump_to_single_result = true })
-				end, { buffer = 0 })
-				vim.keymap.set("n", "gr", fzf_lua.lsp_references, { buffer = 0 })
-				vim.keymap.set("n", "gI", fzf_lua.lsp_implementations, { buffer = 0 })
-				vim.keymap.set("n", "<leader>D", fzf_lua.lsp_typedefs, { buffer = 0 })
-				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 })
-				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
+				-- vim.keymap.set("n", "gd", function()
+				-- 	fzf_lua.lsp_definitions({ jump_to_single_result = true })
+				-- end, { buffer = 0 })
+				-- vim.keymap.set("n", "gr", fzf_lua.lsp_references, { buffer = 0 })
+				-- vim.keymap.set("n", "gI", fzf_lua.lsp_implementations, { buffer = 0 })
+				-- vim.keymap.set("n", "<leader>D", fzf_lua.lsp_typedefs, { buffer = 0 })
+				-- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 })
+				-- vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
 			end,
 		})
