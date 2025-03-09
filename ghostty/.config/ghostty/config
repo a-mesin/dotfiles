@@ -1,5 +1,6 @@
 font-size = 12
 font-thicken = true
+font-family = "VictorMono Nerd Font"
 background-opacity = 0.85
 background-blur-radius = 100
 
