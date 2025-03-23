@@ -1,12 +1,17 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export CC:/opt/homebrew/Cellar/gcc/14\x2e2\x2e0_1/bin/gcc\x2d14
+SETUVAR --export GOOS:darwin
 SETUVAR --export GOPATH:/Users/aym/go
 SETUVAR --export GOROOT:/opt/homebrew/opt/go/libexec
+SETUVAR --export GPG_TTY:/dev/ttys002
 SETUVAR --export --path HOMEBREW_BIN:/opt/homebrew/bin
+SETUVAR --export KEYCLOAK_ENDPOINT:from_fish
 SETUVAR --export KUBE_EDITOR:nvim
 SETUVAR --export MC_HOST_local:http\x3a//rootuser\x3arootpass123\x40localhost\x3a9000
 SETUVAR --export MC_HOST_minio_local:http\x3a//rootuser\x3arootpass1234\x40localhost\x3a9000
-SETUVAR --export --path PATH:/Users/aym/go/bin\x1e/Users/aym/go\x1e/opt/homebrew/bin\x1e/usr/local/bin\x1e/System/Cryptexes/App/usr/bin\x1e/usr/bin\x1e/bin\x1e/usr/sbin\x1e/sbin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/local/bin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/bin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/appleinternal/bin\x1e/Users/aym/\x2ekrew/bin
+SETUVAR --export --path PATH:/opt/homebrew/opt/go/libexec/bin\x1e/opt/homebrew/opt/libpq/bin\x1e/Users/aym/go/bin\x1e/Users/aym/go\x1e/opt/homebrew/bin\x1e/usr/local/bin\x1e/System/Cryptexes/App/usr/bin\x1e/usr/bin\x1e/bin\x1e/usr/sbin\x1e/sbin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/local/bin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/bin\x1e/var/run/com\x2eapple\x2esecurity\x2ecryptexd/codex\x2esystem/bootstrap/usr/appleinternal/bin\x1e/opt/homebrew/Cellar/gcc/14\x2e2\x2e0_1/
+SETUVAR --export REPLAY_API_KEY:rwk_moGsgUxF84MerGAGyhAQABYMcM3HwsAKJpWkH2LMLEP
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_acomagu_2F_fish_2D_async_2D_prompt_files:\x7e/\x2econfig/fish/conf\x2ed/__async_prompt\x2efish
 SETUVAR _fisher_plugins:acomagu/fish\x2dasync\x2dprompt
@@ -39,4 +44,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/opt/homebrew/opt/go/libexec/bin\x1e/opt/homebrew/opt/libpq/bin\x1e/Users/aym/go/bin\x1e/Users/aym/go\x1e/opt/homebrew/bin
+SETUVAR fish_user_paths:/opt/homebrew/Cellar/gcc/14\x2e2\x2e0_1/bin\x1e/opt/homebrew/opt/go/libexec/bin\x1e/opt/homebrew/opt/libpq/bin\x1e/Users/aym/go/bin\x1e/Users/aym/go\x1e/opt/homebrew/bin
