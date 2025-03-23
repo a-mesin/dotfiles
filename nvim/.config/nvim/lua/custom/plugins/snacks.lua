@@ -10,7 +10,14 @@ return {
 		lazygit = { enabled = true },
 		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
-		zen = { enabled = true },
+		zen = {
+			enabled = true,
+		},
+		styles = {
+			zen = {
+				width = 160,
+			},
+		},
 	},
 	keys = {
 		-- Top Pickers & Explorer
