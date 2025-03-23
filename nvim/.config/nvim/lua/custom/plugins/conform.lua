@@ -22,6 +22,7 @@ return {
 				rust = { "rustfmt" },
 				scss = { "prettier" },
 				go = { "goimports" },
+				vue = { "prettier" },
 			},
 			formatters = {
 				sqlfluff = {
