@@ -4,7 +4,6 @@ local opt = vim.opt
 cmd("syntax on")
 
 opt.number = true
-opt.relativenumber = true -- displays relative number
 opt.tabstop = 4 -- set auto indent to 4 spaces
 opt.softtabstop = 4 -- enables backspace to delete entire tab
 opt.shiftwidth = 4 -- number of spaces to use for each indent
