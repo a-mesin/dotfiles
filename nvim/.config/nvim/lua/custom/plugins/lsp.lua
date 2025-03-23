@@ -24,8 +24,8 @@ return {
 				-- vim.keymap.set("n", "gr", fzf_lua.lsp_references, { buffer = 0 })
 				-- vim.keymap.set("n", "gI", fzf_lua.lsp_implementations, { buffer = 0 })
 				-- vim.keymap.set("n", "<leader>D", fzf_lua.lsp_typedefs, { buffer = 0 })
-				-- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 })
-				-- vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
+				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 })
+				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
 			end,
 		})
