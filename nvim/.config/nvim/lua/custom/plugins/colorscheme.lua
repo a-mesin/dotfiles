@@ -16,16 +16,16 @@
 -- 	end,
 -- }
 --
-return {
-	"wtfox/jellybeans.nvim",
-	priority = 1000,
-	config = function()
-		require("jellybeans").setup({
-			transparent = true,
-		})
-		vim.cmd.colorscheme("jellybeans")
-	end,
-}
+-- return {
+-- 	"wtfox/jellybeans.nvim",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("jellybeans").setup({
+-- 			transparent = true,
+-- 		})
+-- 		vim.cmd.colorscheme("jellybeans")
+-- 	end,
+-- }
 --
 -- return {
 -- 	"scottmckendry/cyberdream.nvim",
@@ -38,3 +38,15 @@ return {
 -- 		vim.cmd.colorscheme("cyberdream")
 -- 	end,
 -- }
+return {
+	{
+		"Skardyy/makurai-nvim",
+		config = function()
+			require("makurai").setup({
+				transparent = true, -- removes the bg color
+			})
+
+			vim.cmd.colorscheme("makurai_less")
+		end,
+	},
+}
