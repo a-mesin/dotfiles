@@ -23,5 +23,6 @@ return {
 	keys = {
 		{ "<leader>tt", "<cmd>lua require('neotest').run.run()<cr>" },
 		{ "<leader>ttf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>" },
+		{ "<leader>tts", "<cmd>lua require('neotest').summary.toggle()<cr>" },
 	},
 }
