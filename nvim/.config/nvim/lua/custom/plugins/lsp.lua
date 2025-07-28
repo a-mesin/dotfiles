@@ -63,6 +63,7 @@ return {
 			rust_analyzer = {},
 			svelte = {},
 			lua_ls = {},
+			bashls = {},
 		}
 
 		-- Add other tools you want to make sure are installed
