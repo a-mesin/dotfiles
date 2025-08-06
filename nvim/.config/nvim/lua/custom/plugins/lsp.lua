@@ -22,6 +22,8 @@ return {
 			end,
 		})
 
+		vim.lsp.inlay_hint.enable(false)
+
 		local servers = {
 			gopls = {},
 			ts_ls = {
