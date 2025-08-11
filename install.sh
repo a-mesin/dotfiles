@@ -22,8 +22,6 @@ packages=(
     procs
     fzf
     fish
-    koekeishiya/formulae/yabai
-    koekeishiya/formulae/skhd
     starship
     zsh-autosuggestions
     wezterm
@@ -40,8 +38,6 @@ stow_dirs=(
     tmux
     nvim
     bat
-    yabai
-    skhd
     wezterm
 )
 
