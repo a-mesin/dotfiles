@@ -10,7 +10,7 @@ packages=(
     git
     neovim
     stow
-    tmux
+    zellij
     ripgrep
     golang
     zulu
@@ -24,7 +24,7 @@ packages=(
     fish
     starship
     zsh-autosuggestions
-    wezterm
+    ghostty
     nikitabobko/tap/aerospace
     borders
 )
@@ -37,10 +37,10 @@ done
 echo '🚀 Stow dirs'
 stow_dirs=(
     fish
-    tmux
+    zellij
     nvim
     bat
-    wezterm
+    ghostty
     aerospace
 )
 
