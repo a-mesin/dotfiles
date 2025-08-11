@@ -25,6 +25,8 @@ packages=(
     starship
     zsh-autosuggestions
     wezterm
+    nikitabobko/tap/aerospace
+    borders
 )
 
 for package in "${packages[@]}"; do
@@ -39,6 +41,7 @@ stow_dirs=(
     nvim
     bat
     wezterm
+    aerospace
 )
 
 for stow_dir in "${stow_dirs[@]}"; do
