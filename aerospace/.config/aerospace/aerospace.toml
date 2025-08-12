@@ -54,9 +54,16 @@ automatically-unhide-macos-hidden-apps = true
     inner.horizontal = 8
     inner.vertical =   8
     outer.left =       5
+    outer.right =      5
     outer.bottom =     5
     outer.top =        5
-    outer.right =      5
+    # outer.top = [
+    #     { monitor."built-in" = 10 },
+    #     { monitor.main = 42  }, # sketchybar height is 37 + 5 padding
+    #     { monitor.secondary = 5 },
+    #     20
+    # ]
+
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -92,7 +99,7 @@ automatically-unhide-macos-hidden-apps = true
     # '''
 
     # App shortcuts
-    alt-t = 'exec-and-forget open -a /Applications/Ghostty.app'
+    alt-g = 'exec-and-forget open -a /Applications/Ghostty.app'
     alt-b = 'exec-and-forget open -a /Applications/Arc.app'
     alt-c = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
     alt-o = 'exec-and-forget open -a /Applications/Microsoft\ Outlook.app'
@@ -126,6 +133,8 @@ automatically-unhide-macos-hidden-apps = true
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -133,6 +142,8 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-3 = 'move-node-to-workspace 3'
     alt-shift-4 = 'move-node-to-workspace 4'
     alt-shift-5 = 'move-node-to-workspace 5'
+    alt-shift-6 = 'move-node-to-workspace 6'
+    alt-shift-7 = 'move-node-to-workspace 7'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -159,5 +170,31 @@ automatically-unhide-macos-hidden-apps = true
     alt-shift-l = ['join-with right', 'mode main']
 
     [[on-window-detected]]
+    if.app-id='company.thebrowser.Browser'
+    run = ['move-node-to-workspace 1']
+
+    [[on-window-detected]]
     if.app-id='com.mitchellh.ghostty'
     run = ['move-node-to-workspace 2']
+
+    [[on-window-detected]]
+    if.app-id='com.jetbrains.intellij'
+    run = ['move-node-to-workspace 3']
+
+    [[on-window-detected]]
+    if.app-id='com.microsoft.Outlook'
+    run = ['move-node-to-workspace 4']
+
+    [[on-window-detected]]
+    if.app-id='com.microsoft.teams2'
+    run = ['move-node-to-workspace 4']
+
+# force certain workspaces to certain monitors
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'secondary'
+7 = 'secondary'
