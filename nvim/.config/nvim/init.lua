@@ -71,7 +71,7 @@ require("vague").setup({
 })
 vim.cmd([[colorscheme vague]])
 
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
 	ensure_installed = {
 		"bash",
 		"dockerfile",
