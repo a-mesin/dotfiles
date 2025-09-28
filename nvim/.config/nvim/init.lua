@@ -52,7 +52,7 @@ map("n", "<leader>f", "<cmd>lua Snacks.picker.files() <cr>")
 map("n", "<leader>/", "<cmd>lua Snacks.picker.grep() <cr>")
 
 vim.pack.add({
-    "https://github.com/mcauley-penney/techbase.nvim",
+	"https://github.com/vague2k/vague.nvim",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	"https://github.com/nvim-treesitter/nvim-treesitter-context",
 	"https://github.com/neovim/nvim-lspconfig",
@@ -66,12 +66,12 @@ vim.pack.add({
 	"https://github.com/nvim-pack/nvim-spectre",
 })
 
-require("techbase").setup({
+require("vague").setup({
 	transparent = true,
 })
-vim.cmd([[colorscheme techbase]])
+vim.cmd([[colorscheme vague]])
 
-require("nvim-treesitter").setup({
+require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"bash",
 		"dockerfile",
