@@ -85,6 +85,7 @@ require("nvim-treesitter").setup({
 		"rust",
 		"toml",
 		"yaml",
+		"vue",
 	},
 	auto_install = true,
 	sync_install = false,
@@ -222,6 +223,7 @@ require("lint").linters_by_ft = {
 	typescript = { "eslint_d" },
 	typescriptreact = { "eslint_d" },
 	svelte = { "eslint_d" },
+	vue = { "eslint_d" },
 	markdown = { "markdownlint" },
 	yaml = { "yamllint" },
 }
