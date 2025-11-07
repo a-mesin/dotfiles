@@ -46,6 +46,9 @@ map("n", "Y", "y$") -- Fix yanking
 map("n", "n", "nzz") -- centre when searching
 map("n", "N", "Nzz")
 
+map("n", "<leader>w", ":w<cr>")
+map("n", "<leader>wa", ":wa<cr>")
+
 map("n", "-", "<cmd>Oil<cr>")
 map("n", "<leader>g", "<cmd>lua Snacks.lazygit() <cr>")
 map("n", "<leader>f", "<cmd>lua Snacks.picker.files() <cr>")
@@ -126,6 +129,7 @@ vim.lsp.enable({
 	"ts_ls",
 	"bashls",
 	"rust_analyzer",
+	"tailwindcss",
 })
 
 map("n", "<leader>e", vim.diagnostic.open_float)
