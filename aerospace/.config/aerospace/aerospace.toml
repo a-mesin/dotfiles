@@ -100,9 +100,10 @@ automatically-unhide-macos-hidden-apps = true
 
     # App shortcuts
     alt-g = 'exec-and-forget open -a /Applications/Ghostty.app'
-    alt-b = 'exec-and-forget open -a /Applications/Arc.app'
+    alt-b = 'exec-and-forget open -a /Applications/Zen\ Browser.app'
     alt-c = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
     alt-o = 'exec-and-forget open -a /Applications/Microsoft\ Outlook.app'
+    alt-s = 'exec-and-forget open -a /Applications/Slack.app'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
@@ -174,6 +175,10 @@ automatically-unhide-macos-hidden-apps = true
     run = ['move-node-to-workspace 1']
 
     [[on-window-detected]]
+    if.app-id='app.zen-browser.zen'
+    run = ['move-node-to-workspace 1']
+
+    [[on-window-detected]]
     if.app-id='com.mitchellh.ghostty'
     run = ['move-node-to-workspace 2']
 
@@ -187,6 +192,10 @@ automatically-unhide-macos-hidden-apps = true
 
     [[on-window-detected]]
     if.app-id='com.microsoft.teams2'
+    run = ['move-node-to-workspace 4']
+
+    [[on-window-detected]]
+    if.app-id='com.tinyspeck.slackmacgap'
     run = ['move-node-to-workspace 4']
 
 # force certain workspaces to certain monitors
