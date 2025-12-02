@@ -104,6 +104,7 @@ automatically-unhide-macos-hidden-apps = true
     alt-c = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
     alt-o = 'exec-and-forget open -a /Applications/Microsoft\ Outlook.app'
     alt-s = 'exec-and-forget open -a /Applications/Slack.app'
+    alt-n = 'exec-and-forget open -a /Applications/Obsidian.app'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
@@ -184,6 +185,10 @@ automatically-unhide-macos-hidden-apps = true
 
     [[on-window-detected]]
     if.app-id='com.jetbrains.intellij'
+    run = ['move-node-to-workspace 3']
+
+    [[on-window-detected]]
+    if.app-id='md.obsidian.Obsidian'
     run = ['move-node-to-workspace 3']
 
     [[on-window-detected]]
