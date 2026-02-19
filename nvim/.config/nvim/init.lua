@@ -26,6 +26,7 @@ o.splitbelow = true -- Put new windows below current
 o.splitright = true -- Put new windows right of current
 o.updatetime = 250 -- Decrease update time
 o.scrolloff = 10 -- Minimal number of visible lines
+o.winborder = "rounded"
 
 -- Move lines
 map("n", "<leader>j", ":m .+1<cr>==")
@@ -54,6 +55,11 @@ map("n", "<leader>g", "<cmd>lua Snacks.lazygit() <cr>")
 map("n", "<leader>f", "<cmd>lua Snacks.picker.files() <cr>")
 map("n", "<leader>/", "<cmd>lua Snacks.picker.grep() <cr>")
 
+map("n", "<leader>o", ":update<CR> :source<CR>")
+
+map("n", "<leader>e", vim.diagnostic.open_float)
+map("n", "<leader>q", vim.diagnostic.setloclist)
+
 vim.pack.add({
 	"https://github.com/vague2k/vague.nvim",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -72,7 +78,7 @@ vim.pack.add({
 require("vague").setup({
 	transparent = true,
 })
-vim.cmd([[colorscheme vague]])
+vim.cmd("colorscheme vague")
 
 require("nvim-treesitter").setup({
 	ensure_installed = {
@@ -126,50 +132,40 @@ require("treesitter-context").setup({
 vim.lsp.enable({
 	"gopls",
 	"lua_ls",
-	"ts_ls",
+	"vtsls",
 	"bashls",
 	"rust_analyzer",
 	"tailwindcss",
+	"vue_ls",
 })
 
-map("n", "<leader>e", vim.diagnostic.open_float)
-map("n", "<leader>q", vim.diagnostic.setloclist)
-
-vim.lsp.config("ts_ls", {
-	capabilities = require("blink.cmp").get_lsp_capabilities(),
-	filetypes = {
-		"javascript",
-		"typescript",
-		"typescriptreact",
-		"vue",
-		"stylua",
-	},
-	init_options = {
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = vim.fn.stdpath("data")
-					.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-				languages = { "vue" },
-			},
-		},
-	},
+vim.lsp.config("vtsls", {
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 	settings = {
-		typescript = {
+		vtsls = {
 			tsserver = {
-				useSyntaxServer = false,
-			},
-			inlayHints = {
-				includeInlayParameterNameHints = "all",
-				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayVariableTypeHints = true,
-				includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayEnumMemberValueHints = true,
+				globalPlugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = vim.fn.stdpath("data")
+							.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+						languages = { "vue" },
+						configNamespace = "typescript",
+					},
+				},
+				preferences = {
+					includePackageJsonAutoImports = "auto",
+				},
 			},
 		},
+	},
+	keys = {
+		map("n", "<leader>csi", function()
+			vim.lsp.buf.code_action({
+				context = { only = { "source.sortImports.ts" } },
+				apply = true,
+			})
+		end),
 	},
 })
 
@@ -261,19 +257,21 @@ require("lualine").setup({
 })
 
 require("blink.cmp").setup({
+	sources = {
+		default = { "lsp", "path", "snippets", "buffer" },
+	},
 	fuzzy = {
 		implementation = "lua",
 	},
 	completion = {
 		documentation = {
-			auto_show = true,
+			auto_show = false,
 		},
 	},
 })
 
 require("mini.pairs").setup()
 require("mini.icons").setup()
-require("mini.diff").setup()
 
 require("snacks").setup({
 	picker = { enabled = true },
