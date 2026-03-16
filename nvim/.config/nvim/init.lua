@@ -60,6 +60,8 @@ map("n", "<leader>o", ":update<CR> :source<CR>")
 map("n", "<leader>e", vim.diagnostic.open_float)
 map("n", "<leader>q", vim.diagnostic.setloclist)
 
+map("n", "<leader>ai", ":Sidekick cli toggle<CR>")
+
 vim.pack.add({
 	"https://github.com/vague2k/vague.nvim",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -73,6 +75,7 @@ vim.pack.add({
 	"https://github.com/echasnovski/mini.nvim",
 	"https://github.com/folke/snacks.nvim",
 	"https://github.com/nvim-pack/nvim-spectre",
+	"https://github.com/folke/sidekick.nvim",
 })
 
 require("vague").setup({
@@ -129,6 +132,13 @@ require("treesitter-context").setup({
 	line_numbers = true,
 })
 
+vim.diagnostic.config({
+	float = { border = "rounded" },
+	severity_sort = true,
+	underline = true,
+	update_in_insert = false,
+})
+
 vim.lsp.enable({
 	"gopls",
 	"lua_ls",
@@ -138,6 +148,8 @@ vim.lsp.enable({
 	"tailwindcss",
 	"vue_ls",
 })
+
+vim.lsp.semantic_tokens.enable(true)
 
 vim.lsp.config("vtsls", {
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
@@ -158,15 +170,29 @@ vim.lsp.config("vtsls", {
 				},
 			},
 		},
+		typescript = {
+			inlayHints = {
+				parameterNames = { enabled = "literals" },
+				parameterTypes = { enabled = true },
+				variableTypes = { enabled = false },
+				propertyDeclarationTypes = { enabled = true },
+				functionLikeReturnTypes = { enabled = true },
+				enumMemberValues = { enabled = true },
+			},
+		},
 	},
-	keys = {
-		map("n", "<leader>csi", function()
-			vim.lsp.buf.code_action({
-				context = { only = { "source.sortImports.ts" } },
-				apply = true,
-			})
-		end),
-	},
+})
+
+-- Auto-import on save
+autocmd("BufWritePre", {
+	group = augroup,
+	pattern = { "*.ts", "*.tsx", "*.vue", "*.js", "*.jsx" },
+	callback = function()
+		vim.lsp.buf.code_action({
+			context = { only = { "source.addMissingImports.ts" } },
+			apply = true,
+		})
+	end,
 })
 
 autocmd("LspAttach", {
@@ -180,6 +206,8 @@ autocmd("LspAttach", {
 			map("n", "gd", vim.lsp.buf.definition, bufopts)
 			map("n", "gD", vim.lsp.buf.type_definition, bufopts)
 			map("n", "K", vim.lsp.buf.hover, bufopts)
+			map("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+			map("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 		end
 	end,
 })
@@ -228,7 +256,7 @@ require("lint").linters_by_ft = {
 	yaml = { "yamllint" },
 }
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
 	callback = function()
 		require("lint").try_lint()
 	end,
@@ -264,10 +292,13 @@ require("blink.cmp").setup({
 		implementation = "lua",
 	},
 	completion = {
-		documentation = {
-			auto_show = false,
+		list = {
+			selection = {
+				preselect = false, -- prevents wrong auto accepts
+			},
 		},
 	},
+	signature = { enabled = true },
 })
 
 require("mini.pairs").setup()
@@ -276,4 +307,16 @@ require("mini.icons").setup()
 require("snacks").setup({
 	picker = { enabled = true },
 	lazygit = { enabled = true },
+})
+
+require("sidekick").setup({
+	opts = {
+		nes = { enabled = false },
+		cli = {
+			mux = {
+				enabled = true,
+				backend = "zellij",
+			},
+		},
+	},
 })
