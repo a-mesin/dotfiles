@@ -13,6 +13,8 @@ o.shiftwidth = 4 -- number of spaces to use for each indent
 o.shiftround = true -- rounds the indent spacing to the next multiple of shiftwidth
 o.expandtab = true -- tabs are actually white spaces
 o.smartcase = true -- considers casing when searching
+o.ignorecase = true -- required for smartcast to actually work
+o.signcolumn = "yes" -- prevents gutter from shifting layout
 o.hlsearch = false -- disables highlighting of previous search
 o.backup = false -- disables backup
 o.termguicolors = true
@@ -63,7 +65,8 @@ map("n", "<leader>q", vim.diagnostic.setloclist)
 map("n", "<leader>ai", ":Sidekick cli toggle<CR>")
 
 vim.pack.add({
-	"https://github.com/vague2k/vague.nvim",
+	"https://github.com/aktersnurra/no-clown-fiesta.nvim",
+	"https://github.com/lewis6991/gitsigns.nvim",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	"https://github.com/nvim-treesitter/nvim-treesitter-context",
 	"https://github.com/neovim/nvim-lspconfig",
@@ -72,16 +75,14 @@ vim.pack.add({
 	"https://github.com/mfussenegger/nvim-lint",
 	"https://github.com/nvim-lualine/lualine.nvim",
 	"https://github.com/saghen/blink.cmp",
-	"https://github.com/echasnovski/mini.nvim",
+	"https://github.com/saghen/blink.lib",
+	"https://github.com/nvim-mini/mini.nvim",
 	"https://github.com/folke/snacks.nvim",
-	"https://github.com/nvim-pack/nvim-spectre",
 	"https://github.com/folke/sidekick.nvim",
+	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 })
 
-require("vague").setup({
-	transparent = true,
-})
-vim.cmd("colorscheme vague")
+vim.cmd.colorscheme("no-clown-fiesta")
 
 require("nvim-treesitter").setup({
 	ensure_installed = {
@@ -98,6 +99,7 @@ require("nvim-treesitter").setup({
 		"toml",
 		"yaml",
 		"vue",
+		"python",
 	},
 	auto_install = true,
 	sync_install = false,
@@ -147,6 +149,9 @@ vim.lsp.enable({
 	"rust_analyzer",
 	"tailwindcss",
 	"vue_ls",
+	"pyright",
+	"cssls",
+	"jsonls",
 })
 
 vim.lsp.semantic_tokens.enable(true)
@@ -237,6 +242,7 @@ require("conform").setup({
 		scss = { "prettier" },
 		go = { "goimports" },
 		vue = { "prettier" },
+		python = { "ruff" },
 	},
 	formatters = {
 		sqlfluff = {
@@ -254,6 +260,7 @@ require("lint").linters_by_ft = {
 	vue = { "eslint_d" },
 	markdown = { "markdownlint" },
 	yaml = { "yamllint" },
+	python = { "ruff" },
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
@@ -303,10 +310,12 @@ require("blink.cmp").setup({
 
 require("mini.pairs").setup()
 require("mini.icons").setup()
+require("mini.surround").setup()
 
 require("snacks").setup({
 	picker = { enabled = true },
 	lazygit = { enabled = true },
+	indent = { enabled = true },
 })
 
 require("sidekick").setup({
