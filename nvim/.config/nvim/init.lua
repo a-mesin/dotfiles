@@ -56,6 +56,7 @@ map("n", "-", "<cmd>Oil<cr>")
 map("n", "<leader>g", "<cmd>lua Snacks.lazygit() <cr>")
 map("n", "<leader>f", "<cmd>lua Snacks.picker.files() <cr>")
 map("n", "<leader>/", "<cmd>lua Snacks.picker.grep() <cr>")
+map("n", "<leader>ff", "<cmd>lua Snacks.explorer.open() <cr>")
 
 map("n", "<leader>o", ":update<CR> :source<CR>")
 
@@ -322,7 +323,7 @@ require("mini.surround").setup()
 require("snacks").setup({
 	picker = { enabled = true },
 	lazygit = { enabled = true },
-	indent = { enabled = true },
+	explorer = { enabled = true },
 })
 
 require("sidekick").setup({
