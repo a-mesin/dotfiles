@@ -2,7 +2,7 @@ font-size = 12
 font-thicken = true
 font-family = "VictorMono Nerd Font"
 background-opacity = 0.85
-background-blur-radius = 100
+background-blur-radius = 40
 
 theme = "vague"
 
@@ -21,3 +21,5 @@ macos-option-as-alt = true
 
 keybind = alt+left=unbind
 keybind = alt+right=unbind
+
+cursor-click-to-move = false
