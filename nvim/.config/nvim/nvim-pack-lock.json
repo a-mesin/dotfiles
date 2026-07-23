@@ -12,6 +12,10 @@
       "rev": "5876dd95deeb70aadbe9f1c0b7117a135061cdac",
       "src": "https://github.com/saghen/blink.lib"
     },
+    "bogster": {
+      "rev": "22a5de0a52ca16cc4cb1966b7318fbe6c2e241ca",
+      "src": "https://github.com/vv9k/bogster"
+    },
     "carvion.nvim": {
       "rev": "a5a120d535b83fec5b08efab2557effbc2f34602",
       "src": "https://github.com/zitrocode/carvion.nvim"
@@ -32,6 +36,22 @@
       "rev": "aba065c3a79b58cc3863d5c9db319255abd1258a",
       "src": "http://github.com/blazkowolf/gruber-darker.nvim"
     },
+    "gruvbox": {
+      "rev": "5d15b2765f59754d7ac263c88a0f6e3e58124951",
+      "src": "https://github.com/morhetz/gruvbox"
+    },
+    "guts.nvim": {
+      "rev": "4377fdf450bca2bfd571191b6dc6ae8e24faff77",
+      "src": "https://github.com/vossenwout/guts.nvim"
+    },
+    "jellybeans.nvim": {
+      "rev": "29f4c17981f70c0919c2f3f918da9a89f906bf37",
+      "src": "https://github.com/wtfox/jellybeans.nvim"
+    },
+    "kanagawa.nvim": {
+      "rev": "bb85e4bfc8d89b0e62c8fa53ccdd13d12e2f77b3",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
+    },
     "kanso.nvim": {
       "rev": "1afbbb449aa0254823dbe1932e3cbb51886ff9fe",
       "src": "https://github.com/webhooked/kanso.nvim"
@@ -39,6 +59,10 @@
     "koda.nvim": {
       "rev": "a7da3ced59eadafbda6eb4d7f7e2a6a3d9ecf858",
       "src": "https://github.com/oskarnurm/koda.nvim"
+    },
+    "lackluster.nvim": {
+      "rev": "70dd682e564784893b984deb51dd5ddd263c8cc7",
+      "src": "https://github.com/slugbyte/lackluster.nvim"
     },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
@@ -51,6 +75,14 @@
     "modus-themes.nvim": {
       "rev": "17a64464c27c1be605adca13dbe48f2f402fe107",
       "src": "https://github.com/miikanissi/modus-themes.nvim"
+    },
+    "neovim": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim"
+    },
+    "neovim-ayu": {
+      "rev": "e5a9f0fa2918d6b5f57c21b3ac014314ee5e41c8",
+      "src": "https://github.com/Shatur/neovim-ayu"
     },
     "nightfox.nvim": {
       "rev": "26b61b1f856ec37cae3cb64f5690adb955f246a1",
@@ -93,6 +125,10 @@
       "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
       "src": "https://github.com/stevearc/oil.nvim"
     },
+    "okcolors.nvim": {
+      "rev": "fc3adc66edf6d146e28122e3872f1b402747f94c",
+      "src": "https://github.com/e-q/okcolors.nvim"
+    },
     "render-markdown.nvim": {
       "rev": "f422cb5c6855f150e2ddcfaf44e7157b98b34f6a",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
@@ -105,9 +141,17 @@
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "https://github.com/folke/snacks.nvim"
     },
+    "south.nvim": {
+      "rev": "0d907b6309b33cfba1622e75ee7aa9d750e1dfbb",
+      "src": "https://github.com/arnauKL/south.nvim"
+    },
     "techbase.nvim": {
       "rev": "90c5589e22a5723b535e48df1d4c675ae096341e",
       "src": "https://github.com/mcauley-penney/techbase.nvim"
+    },
+    "themery.nvim": {
+      "rev": "bfa58f4b279d21cb515b28023e1b68ec908584b2",
+      "src": "https://github.com/zaldih/themery.nvim"
     },
     "thorn.nvim": {
       "rev": "3653d1508e605fe87ec174e8c2ad0f36ce9844f3",

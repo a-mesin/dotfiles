@@ -64,9 +64,9 @@ map("n", "<leader>e", vim.diagnostic.open_float)
 map("n", "<leader>q", vim.diagnostic.setloclist)
 
 map("n", "<leader>ai", ":Sidekick cli toggle<CR>")
+map("n", "<leader>tt", ":Themery<CR>")
 
 vim.pack.add({
-	"https://github.com/aktersnurra/no-clown-fiesta.nvim",
 	"https://github.com/lewis6991/gitsigns.nvim",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	"https://github.com/nvim-treesitter/nvim-treesitter-context",
@@ -81,9 +81,19 @@ vim.pack.add({
 	"https://github.com/folke/snacks.nvim",
 	"https://github.com/folke/sidekick.nvim",
 	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
+	-- Themes
+	"https://github.com/rebelot/kanagawa.nvim",
+	"https://github.com/wtfox/jellybeans.nvim",
+	"https://github.com/slugbyte/lackluster.nvim",
+	"https://github.com/aktersnurra/no-clown-fiesta.nvim",
+	"https://github.com/rose-pine/neovim",
+	"https://github.com/vague-theme/vague.nvim",
+	"https://github.com/blazkowolf/gruber-darker.nvim",
+	"https://github.com/Shatur/neovim-ayu",
+	"https://github.com/zaldih/themery.nvim",
 })
 
-vim.cmd.colorscheme("no-clown-fiesta")
+vim.cmd.colorscheme("vague")
 
 require("nvim-treesitter").setup({
 	ensure_installed = {
@@ -336,4 +346,18 @@ require("sidekick").setup({
 			},
 		},
 	},
+})
+
+require("themery").setup({
+	themes = {
+		"kanagawa",
+		"kanagawa-dragon",
+		"jellybeans",
+		"lackluster",
+		"no-clown-fiesta",
+		"rose-pine",
+		"vague",
+		"ayu",
+	},
+	livePreview = true,
 })
