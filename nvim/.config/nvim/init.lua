@@ -149,13 +149,15 @@ vim.lsp.enable({
 	"rust_analyzer",
 	"tailwindcss",
 	"vue_ls",
-	"pyright",
+	"ruff",
 	"cssls",
 	"jsonls",
+	"ty",
 })
 
 vim.lsp.semantic_tokens.enable(true)
 
+-- Typescript
 vim.lsp.config("vtsls", {
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 	settings = {
@@ -186,6 +188,11 @@ vim.lsp.config("vtsls", {
 			},
 		},
 	},
+})
+
+-- Python
+vim.lsp.config("ty", {
+	root_markers = { "uv.lock" },
 })
 
 -- Auto-import on save
@@ -242,7 +249,7 @@ require("conform").setup({
 		scss = { "prettier" },
 		go = { "goimports" },
 		vue = { "prettier" },
-		python = { "ruff" },
+		python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 	},
 	formatters = {
 		sqlfluff = {
